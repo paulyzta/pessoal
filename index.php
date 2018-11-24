@@ -8,6 +8,54 @@
 
 $arquivo = 'lista.m3u';
 $arrErros = array();
+$grupos = [];
+
+function  trata($link) {
+    echo '<pre>';
+    $xxx = [];
+
+
+    $str = explode(',', $link);
+    $title = trim($str[1]);
+
+//    echo $str[0];
+//    echo '<hr>';
+
+    $itens = array('id', 'name', 'logo', 'group-title');
+
+    $id = '';
+
+    foreach ($itens as $v) {
+        $xxx['title'] = $title;
+        $inicio = substr( $str[0], ( strpos($str[0], $v.'=') + (strlen($v) +2) ) );
+//
+//
+//        echo strpos($inicio, '"');
+//
+//        echo substr( $inicio, 0,  strpos($inicio, '"') );
+//        echo '<hr>';
+
+        $xxx[$v] = substr( $inicio, 0,  strpos($inicio, '"') );
+
+
+        //echo strpos($str[0], $v.'=');
+//        echo ( strpos($str[0], $v.'=') + strlen($v) );
+//
+//        echo substr( $str[0], ( strpos($str[0], $v.'=') + (strlen($v) +2) ) );
+//        die();
+
+    }
+
+
+
+
+
+//    print_r($xxx);
+
+    return $xxx;
+
+
+}
 
 
 
@@ -23,18 +71,27 @@ foreach($linhas as $linha) {
             //echo $linha;
         }
         if ( strpos($linha, 'EXTINF') ) {
-            echo '<p>sem link</p>';
+            //echo '<p>sem link</p>';
+            $xxx = trata($linha);
         } else {
-            echo '<p>link</p>';
+            //echo '<p>link</p>';
         }
     } else {
-        echo 'deu ruim';
+        //echo 'deu ruim';
         $arrErros[] = $linha;
     }
 
 
+    $grupos[$xxx['group-title']][] = $xxx;
+
+
 }
 echo '<pre>';
+echo 'porra';
+
+    print_r($grupos);
+    echo '<hr>';
+
 print_r($linha);
 die();
 
