@@ -6,54 +6,78 @@
  * Time: 15:32
  */
 
+require('conecta.php');
+
 $arquivo = 'lista.m3u';
 $arrErros = array();
 $grupos = [];
 
+
+
 function  trata($link) {
-    echo '<pre>';
-    $xxx = [];
-
-
-    $str = explode(',', $link);
-    $title = trim($str[1]);
-
-//    echo $str[0];
-//    echo '<hr>';
-
-    $itens = array('id', 'name', 'logo', 'group-title');
-
-    $id = '';
+    $result = [];
+    $str = explode(',', $link)[0];
+    $itens = array('tvg-id', 'name', 'logo', 'group-title');
 
     foreach ($itens as $v) {
-        $xxx['title'] = $title;
-        $inicio = substr( $str[0], ( strpos($str[0], $v.'=') + (strlen($v) +2) ) );
-//
-//
-//        echo strpos($inicio, '"');
-//
-//        echo substr( $inicio, 0,  strpos($inicio, '"') );
-//        echo '<hr>';
+        $inicio = substr( $str, ( strpos($str, $v.'=') + (strlen($v) +2) ) );
+        $fim    = substr( $inicio, 0,  strpos($inicio, '"') );
 
-        $xxx[$v] = substr( $inicio, 0,  strpos($inicio, '"') );
-
-
-        //echo strpos($str[0], $v.'=');
-//        echo ( strpos($str[0], $v.'=') + strlen($v) );
-//
-//        echo substr( $str[0], ( strpos($str[0], $v.'=') + (strlen($v) +2) ) );
-//        die();
-
+        $result[$v] = $fim;
     }
 
+    //serie($result['name']);
+
+    $result['grupo']   = $result['group-title'];
+    $result['idList'] = $result['tvg-id'];
+    unset($result['group-title'], $result['tvg-id']);
+
+    return $result;
+}
+
+function salvaRegistro ($array, $pdo) {
+
+    //Insert ou update
+    $link = $array['link'];
+
+    $stmt = $pdo->prepare("SELECT * FROM listaIPTV WHERE link = '$link'");
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($row) {
+        //Existe! Entao vamos atualizar
+        date_default_timezone_set('America/Sao_Paulo');
+        $now = date('Y-m-d h:i:s', time());
+        $sql = "UPDATE listaIPTV SET name = :name, logo = :logo, grupo = :grupo, idList = :idList, updated = '".$now."' WHERE link = :link";
+        //echo '<h4>UPDATE</h4>';
+    } else {
+        //NAO Existe! Entao vamos cadastrar
+        $sql = "INSERT INTO listaIPTV (name, logo, grupo, idList, link) VALUES(:name, :logo, :grupo, :idList, :link)";
+//        echo '<h4>INSERT</h4>';
+//        print_r($array);
+    }
+
+    $pdo->prepare($sql)->execute($array);
+
+    //echo $pdo->lastInsertId(); //retorna o ID do item inserido
+
+    return;
+}
 
 
+function serie($str) {
+    $str = 'Sete Segundos S01 E10';
+    //     ([Ss]?)([0-9]{1,2})\s([eE\.\-]?)([0-9]{1,2})
 
+    $regEx = '/([Ss]?)([0-9]{1,2})\s([eE\.\-]?)([0-9]{1,2})/';
+//    preg_match($regEx, $str, $matches, PREG_OFFSET_CAPTURE, 3);
+//    print_r($matches);
+    $teste = preg_match($regEx, $str);
+    var_dump($teste);
+    die('ssssssssssssssssssss');
+}
 
-//    print_r($xxx);
-
-    return $xxx;
-
+function categorizar($item) {
 
 }
 
@@ -61,31 +85,56 @@ function  trata($link) {
 
 
 $linhas= file($arquivo);
+//echo count($linhas);
+$index = 0;
 
 foreach($linhas as $linha) {
 
-
     if ( !strpos($linha, 'EXTM3U') ) {
+        //remove a primeira linha
         if ( strpos($linha, 'EXTINF') ) {
-//        echo 'aqui';
-            //echo $linha;
-        }
-        if ( strpos($linha, 'EXTINF') ) {
-            //echo '<p>sem link</p>';
-            $xxx = trata($linha);
+            //trata a string com os dados do link
+            $result = trata($linha);
         } else {
-            //echo '<p>link</p>';
+            //adiciona o link ao registro
+            $result['link'] = $linha;
+            //chama a funcao que vai gravar os dados no banco de dados
+            salvaRegistro($result, $pdo);
         }
-    } else {
-        //echo 'deu ruim';
-        $arrErros[] = $linha;
+    }
+    //$index++;
+
+    if ($index >= 500) {
+        echo 'Interrompendo...';
+        break;
     }
 
 
-    $grupos[$xxx['group-title']][] = $xxx;
+
+//    $grupos[$xxx['group-title']][] = $xxx;
 
 
 }
+
+echo 'terminou de inserir no DB...';
+die();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 echo '<pre>';
 echo 'porra';
 
