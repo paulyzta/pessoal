@@ -25,7 +25,7 @@ if ( isset($_GET['genero']) ) {
 
         $url = 'https://api.themoviedb.org/3/search/movie?api_key=e83b1bc134fdaad358d19fff2edc74f9&language=pt-BR&page=1&include_adult=false&query=';
 
-        echo "<a href=\"$url.$titulo\">$titulo</a>";
+        echo "<a href=\"filme.php?filme=$titulo\">$titulo</a>";
         //https://api.themoviedb.org/3/search/movie?api_key=e83b1bc134fdaad358d19fff2edc74f9&language=pt-br&query=os%20vingadores&page=1&include_adult=false
         die();
 
