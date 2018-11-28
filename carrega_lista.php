@@ -1,22 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de conteúdo da IPTV</title>
-</head>
-<body>
-    <h1>Ola mundo!</h1>
-    <ul>
-        <li><a href="filmes">Filmes</a></li>
-        <li><a href="series">Series</a></li>
-    </ul>
-</body>
-</html>
 <?php
-
-die('Remover tudo depois daqui...');
-
 /**
  * Created by PhpStorm.
  * User: danilo
@@ -26,6 +8,7 @@ die('Remover tudo depois daqui...');
 //header('Content-Type: text/html; charset=utf-8');
 header('Content-Type: text/html; charset=iso-8859-1');
 
+$inicio = microtime(true);
 
 
 
@@ -64,7 +47,7 @@ function salvaRegistro ($array, $pdo) {
     //Insert ou update
     $link = $array['link'];
 
-    $stmt = $pdo->prepare("SELECT * FROM listaIPTV WHERE link = '$link'");
+    $stmt = $pdo->prepare("SELECT * FROM listaIPTV_testes WHERE link = '$link'");
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -72,10 +55,10 @@ function salvaRegistro ($array, $pdo) {
         //Existe! Entao vamos atualizar
         date_default_timezone_set('America/Sao_Paulo');
         $now = date('Y-m-d h:i:s', time());
-        $sql = "UPDATE listaIPTV SET name = :name, logo = :logo, grupo = :grupo, idList = :idList, category = :category, updated = '".$now."' WHERE link = :link";
+        $sql = "UPDATE listaIPTV_testes SET name = :name, logo = :logo, grupo = :grupo, idList = :idList, category = :category, updated = '".$now."' WHERE link = :link";
     } else {
         //NAO Existe! Entao vamos cadastrar
-        $sql = "INSERT INTO listaIPTV (name, logo, grupo, idList, link, category) VALUES(:name, :logo, :grupo, :idList, :link, :category)";
+        $sql = "INSERT INTO listaIPTV_testes (name, logo, grupo, idList, link, category) VALUES(:name, :logo, :grupo, :idList, :link, :category)";
     }
 
     $pdo->prepare($sql)->execute($array);
@@ -131,3 +114,5 @@ foreach($linhas as $linha) {
 }
 
 echo 'terminou de inserir no DB...';
+$tempoTotal = microtime(true) - $inicio;
+echo 'Tempo de execução do primeiro script: ' . $tempoTotal;

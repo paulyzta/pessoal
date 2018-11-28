@@ -1,3 +1,0 @@
-SELECT grupo, COUNT(name) as total FROM `listaIPTV` WHERE category = 'Filme' GROUP BY grupo
-
-
