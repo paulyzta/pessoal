@@ -6,6 +6,8 @@
  * Time: 16:49
  */
 
+header('Content-Type: text/html; charset=iso-8859-1');
+
 $host = 'localhost:3306';
 $user = 'user_db';
 $pass = '123456';
