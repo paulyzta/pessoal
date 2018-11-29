@@ -18,3 +18,24 @@ CREATE TABLE `listaIPTV` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+
+CREATE VIEW vw_Filmes
+  AS SELECT
+            id,
+            MID(dev_db.listaIPTV.name, 1, INSTR(dev_db.listaIPTV.name, ' (')-1) AS Titulo,
+            SUBSTRING(dev_db.listaIPTV.name, INSTR(dev_db.listaIPTV.name, ' (')+2, 4) AS Ano,
+            grupo,
+            category,
+            idTMDB,
+            trailler,
+            poster,
+            originalTitle,
+            backdrop,
+            sinopse,
+            nota,
+            created,
+            updated
+     FROM dev_db.listaIPTV
+     WHERE category = 'Filme';
