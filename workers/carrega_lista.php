@@ -12,15 +12,15 @@ $inicio = microtime(true);
 
 
 
-require('includes/conecta.php');
+//require('../includes/conecta.php');
 
-$arquivo = 'includes/lista.m3u';
+$arquivo = '../includes/lista.m3u';
 $arrErros = array();
 $grupos = [];
 
 
 
-function  trata($link) {
+function trata($link) {
     $result = [];
     $str = explode(',', $link)[0];
     $itens = array('tvg-id', 'name', 'logo', 'group-title');
@@ -32,7 +32,7 @@ function  trata($link) {
         $result[$v] = utf8_decode( mb_strtolower($fim !== '' ? $fim : '-' ) );
     }
 
-    $result['name']   = ucwords($result['name']);
+    $result['name']   = $result['name'];
     $result['grupo']  = $result['group-title'];
     $result['idList'] = $result['tvg-id'];
     unset($result['group-title'], $result['tvg-id']);
@@ -41,6 +41,8 @@ function  trata($link) {
 
     return $result;
 }
+
+
 
 function salvaRegistro ($array, $pdo) {
 
@@ -67,19 +69,35 @@ function salvaRegistro ($array, $pdo) {
 }
 
 function categorizar($arr) {
-    $regExFilmes = '/^\(.*\)$/'; //testa nome do grupo entre parenteses
+
+    $regExGrupo = '/^\(.*\)$/'; //Reconhece o ANO de producao do filme para definir que é um filme
+    $regExFilmes = '/\s\((\d{4})\)/'; //Reconhece o ANO de producao do filme para definir que é um filme
     $regExSeries = '/([Ss]?)([0-9]{1,2})\s([eE\.\-]?)([0-9]{1,2})/'; //Busca por Sxx Exx para identificar uma serie
 
-    if ( preg_match($regExFilmes, $arr['grupo']) ) {
-        $arr['grupo']    = substr($arr['grupo'] , 1, -1);
+    if ( preg_match($regExGrupo, $arr['grupo']) ) {
+        //Filmes
+        preg_match_all($regExFilmes, $arr['name'], $resultado);
+
+        $name = str_replace($resultado[0], '', $arr['name']);
+        $name = str_replace('(leg)', '[LEGENDADO]', $name);
+
+        $arr['name']     = $name;
+        $arr['Ano']      = isset($resultado[1][0]) ? $resultado[1][0] : '1900';
+        $arr['grupo']    = substr($arr['grupo'] , 1, -1); //Remove os parenteses do grupo
         $arr['category'] = 'Filme';
-    } elseif ( preg_match($regExSeries, $arr['name']) ) {
-        
-        $arr['category'] = 'Serie';
+
+        //echo $arr['grupo'];die();
+    } elseif ( preg_match_all($regExSeries, $arr['name'], $resultado) ) {
+        //Series
+        $arr['temporada'] = intval($resultado[2][0]);
+        $arr['episodio']  = intval($resultado[4][0]);
+        $arr['category']  = 'Serie';
     } else {
+        //Canais de TV
         $arr['category'] = 'Canal-TV';
     }
     $arr['grupo'] = ucwords($arr['grupo']);
+    $arr['name'] = ucwords($arr['name']);
 
     return $arr;
 }
@@ -102,7 +120,9 @@ foreach($linhas as $linha) {
             //adiciona o link ao registro
             $result['link'] = $linha;
             //chama a funcao que vai gravar os dados no banco de dados
-            salvaRegistro($result, $pdo);
+            //salvaRegistro($result, $pdo);
+
+            $teste[] =$result;
         }
     }
     //$index++;
@@ -112,6 +132,8 @@ foreach($linhas as $linha) {
     }
 
 }
+echo '<pre>';
+print_r($teste);//die();
 
 echo 'terminou de inserir no DB...';
 $tempoTotal = microtime(true) - $inicio;

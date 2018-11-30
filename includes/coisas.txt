@@ -1,0 +1,95 @@
+SELECT  grupo, count(name) AS total FROM dev_db.listaIPTV WHERE category = 'filme' GROUP BY grupo;
+
+select * from dev_db.listaIPTV where grupo = 'Esportes';
+
+
+SELECT name, grupo, idList, category FROM dev_db.listaIPTV WHERE category = 'filme';
+
+
+
+
+SELECT INSTR('A Estrela De Belém', ' (');
+
+SELECT MID('A Estrela De Belém', 1, 1);
+
+
+
+SELECT SUBSTRING('A Estrela De Belém ', 1, -1);
+
+
+CREATE VIEW vw_Filmes
+  AS SELECT
+            id,
+            MID(dev_db.listaIPTV.name, 1, INSTR(dev_db.listaIPTV.name, ' (')-1) AS Titulo,
+            SUBSTRING(dev_db.listaIPTV.name, INSTR(dev_db.listaIPTV.name, ' (')+2, 4) AS Ano,
+            grupo,
+            category,
+            idTMDB,
+            trailler,
+            poster,
+            originalTitle,
+            backdrop,
+            sinopse,
+            nota,
+            created,
+            updated
+     FROM dev_db.listaIPTV
+     WHERE category = 'Filme';
+
+SELECT
+       id,
+       MID(dev_db.listaIPTV.name, 1, INSTR(dev_db.listaIPTV.name, ' (')-1) AS Titulo,
+       SUBSTRING(dev_db.listaIPTV.name, INSTR(dev_db.listaIPTV.name, ' (')+2, 4) AS Ano,
+       grupo,
+       category,
+       idTMDB,
+       trailler,
+       poster,
+       originalTitle,
+       backdrop,
+       sinopse,
+       nota,
+       created,
+       updated
+FROM dev_db.listaIPTV
+WHERE category = 'Filme' AND  id = 21
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT IF ( INSTR('A Estrela De Belém (', ' (') > 0, 'sim', 'nao' );
+
+
+CREATE VIEW vw_Filmes
+  AS SELECT
+            id,
+            IF (INSTR(i.name, ' (') > 0,
+                MID(i.name, 1, (INSTR(i.name, ' (')-1)),
+                i.name) AS Titulo,
+            IF (INSTR(i.name, ' (') > 0,
+                SUBSTRING(i.name, INSTR(i.name, ' (')+2, 4),
+                1900) AS Ano,
+            grupo,
+            category,
+            idTMDB,
+            trailler,
+            poster,
+            originalTitle,
+            backdrop,
+            sinopse,
+            nota,
+            created,
+            updated
+     FROM dev_db.listaIPTV AS i
+     WHERE category = 'Filme';
