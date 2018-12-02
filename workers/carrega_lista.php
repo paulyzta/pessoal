@@ -5,37 +5,57 @@
  * Date: 23/11/18
  * Time: 15:32
  */
-//header('Content-Type: text/html; charset=utf-8');
-header('Content-Type: text/html; charset=iso-8859-1');
 
 $inicio = microtime(true);
 
-
-
-//require('../includes/conecta.php');
+require('../includes/conecta.php');
 
 $arquivo = '../includes/lista.m3u';
+$listaURL= 'https://tinyurl.com/21983556876';
 $arrErros = array();
 $grupos = [];
 
 
 
-function trata($link) {
-    $result = [];
-    $str = explode(',', $link)[0];
-    $itens = array('tvg-id', 'name', 'logo', 'group-title');
+function trata($line) {
+//    $result = array(
+//        'name'          => '',
+//        'logo'          => '',
+//        'grupo'         => '',
+//        'idList'        => '',
+//        'link'          => '',
+//        'ano'           => '',
+//        'category'      => '',
+//        'temporada'     => '',
+//        'episodio'      => '',
+//        'idTMDB'        => '',
+//        'trailler'      => '',
+//        'poster'        => '',
+//        'originalTitle' => '',
+//        'backdrop'      => '',
+//        'sinopse'       => '',
+//        'nota'          => '',
+//        );
 
-    foreach ($itens as $v) {
-        $inicio = substr( $str, ( strpos($str, $v.'=') + (strlen($v) +2) ) );
-        $fim    = substr( $inicio, 0,  strpos($inicio, '"') );
+    $l = explode('",', $line)[0].'"';
+    $itens = array(
+        'idList' => 'tvg-id',
+        'name'   => 'name',
+        'logo'   => 'logo',
+        'grupo'  => 'group-title'
+    );
 
-        $result[$v] = utf8_decode( mb_strtolower($fim !== '' ? $fim : '-' ) );
+    foreach ($itens AS $k => $v) {
+        $start = substr( $l, ( strpos($l, $v.'=') + (strlen($v) +2) ) );
+        $end   = substr( $start, 0,  strpos($start, '"') );
+
+        $result[$k] = mb_strtolower($end !== '' ? $end : '-' );
     }
-
-    $result['name']   = $result['name'];
-    $result['grupo']  = $result['group-title'];
-    $result['idList'] = $result['tvg-id'];
-    unset($result['group-title'], $result['tvg-id']);
+//
+//    $result['grupo']  = $result['group-title'];
+//    $result['idList'] = $result['tvg-id'];
+//    unset($result['group-title'], $result['tvg-id']);
+//    print_r($result);die();
 
     $result = categorizar($result);
 
@@ -43,28 +63,51 @@ function trata($link) {
 }
 
 
+function trataSiglas($name) {
+    $minusculas = array('hd', 'fhd', 'rjhd', 'rjfhd', 'rj', 'sphd', 'spfhd', 'sp', '4k');
+    $MAIUSCULAS = array('HD', 'FHD', 'RJHD', 'RJFHD', 'RJ', 'SPHD', 'SPFHD', 'SP', '4K');
+
+    return str_replace($minusculas, $MAIUSCULAS, $name);
+}
+
+
 
 function salvaRegistro ($array, $pdo) {
-
     //Insert ou update
     $link = $array['link'];
 
-    $stmt = $pdo->prepare("SELECT * FROM listaIPTV_testes WHERE link = '$link'");
+    $stmt = $pdo->prepare("SELECT * FROM listaIPTV WHERE link = '$link'");
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($row) {
+        //echo $log[] = 'UPDATE - '.$array['name'];
+        return;
         //Existe! Entao vamos atualizar
-        date_default_timezone_set('America/Sao_Paulo');
-        $now = date('Y-m-d h:i:s', time());
-        $sql = "UPDATE listaIPTV_testes SET name = :name, logo = :logo, grupo = :grupo, idList = :idList, category = :category, updated = '".$now."' WHERE link = :link";
+        //date_default_timezone_set('America/Sao_Paulo');
+        $array['updated'] = date('Y-m-d h:i:s', time());;
+        $array['id'] = intval($row['id']);
+
+        $update = '`updated` = :updated';
+        foreach ($array AS $k => $v) {
+            $update .= ", `$k` = :$k ";
+        }
+        //$sql = "UPDATE listaIPTV SET `name` = :name, logo = :logo, grupo = :grupo, idList = :idList, category = :category WHERE link = :link";
+        $sql = "UPDATE listaIPTV SET  ".$update." WHERE id = :id";
     } else {
+        //$log[] = 'INSERT INTO - '.$array['name'];
+        //die('aqui'); INSERT INTO listaIPTV (name,logo,grupo,idList,category,link) VALUES (?,?,?,?,?,?)|
         //NAO Existe! Entao vamos cadastrar
-        $sql = "INSERT INTO listaIPTV_testes (name, logo, grupo, idList, link, category) VALUES(:name, :logo, :grupo, :idList, :link, :category)";
+        $columnString = implode(',', array_keys($array));
+        //$valueString = implode(',', array_fill(0, count($array), '?'));
+        $valueString = implode(', :', array_keys($array));
+
+        //$sql = 'INSERT INTO `listaIPTV`(`name`, `logo`, `grupo`, `idList`, `link`, `ano`, `category`, `temporada`, `episodio`, `idTMDB`, `trailler`, `poster`, `originalTitle`, `backdrop`, `sinopse`, `nota`) VALUES (:name, :logo, :grupo, :idList, :link, :ano, :category, :temporada, :episodio, :idTMDB, :trailler, :poster, :originalTitle, :backdrop, :sinopse, :nota)';
+        //$sql = "INSERT INTO listaIPTV ({$columnString}) VALUES ({$valueString})";
+        $sql = "INSERT INTO listaIPTV ({$columnString}) VALUES (:{$valueString})";
     }
-
+        //print_r($array);
     $pdo->prepare($sql)->execute($array);
-
     return;
 }
 
@@ -82,9 +125,10 @@ function categorizar($arr) {
         $name = str_replace('(leg)', '[LEGENDADO]', $name);
 
         $arr['name']     = $name;
-        $arr['Ano']      = isset($resultado[1][0]) ? $resultado[1][0] : '1900';
+        $arr['ano']      = isset($resultado[1][0]) ? $resultado[1][0] : '5555';
         $arr['grupo']    = substr($arr['grupo'] , 1, -1); //Remove os parenteses do grupo
         $arr['category'] = 'Filme';
+//        print_r($arr);
 
         //echo $arr['grupo'];die();
     } elseif ( preg_match_all($regExSeries, $arr['name'], $resultado) ) {
@@ -95,6 +139,7 @@ function categorizar($arr) {
     } else {
         //Canais de TV
         $arr['category'] = 'Canal-TV';
+        $arr['name'] = trataSiglas($arr['name']);
     }
     $arr['grupo'] = ucwords($arr['grupo']);
     $arr['name'] = ucwords($arr['name']);
@@ -106,6 +151,9 @@ function categorizar($arr) {
 
 
 $linhas= file($arquivo);
+
+
+
 //echo count($linhas);
 $index = 0;
 
@@ -120,7 +168,7 @@ foreach($linhas as $linha) {
             //adiciona o link ao registro
             $result['link'] = $linha;
             //chama a funcao que vai gravar os dados no banco de dados
-            //salvaRegistro($result, $pdo);
+            salvaRegistro($result, $pdo);
 
             $teste[] =$result;
         }
@@ -132,7 +180,9 @@ foreach($linhas as $linha) {
     }
 
 }
+
 echo '<pre>';
+//print_r($log);
 print_r($teste);//die();
 
 echo 'terminou de inserir no DB...';

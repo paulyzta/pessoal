@@ -6,7 +6,8 @@
  * Time: 16:49
  */
 
-header('Content-Type: text/html; charset=iso-8859-1');
+//header('Content-Type: text/html; charset=iso-8859-1');
+//header('Content-Type: text/html; charset=UTF-8');
 
 $host = 'localhost:3306';
 $dbname = 'dev_db';
