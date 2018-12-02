@@ -9,9 +9,13 @@
 header('Content-Type: text/html; charset=iso-8859-1');
 
 $host = 'localhost:3306';
-$user = 'user_db';
-$pass = '123456';
 $dbname = 'dev_db';
+
+//$user = 'user_db';
+//$pass = '123456';
+//home
+$user = 'usuario';
+$pass = 'abc@123';
 
 try{
     $pdo = new pdo( "mysql:host=$host;dbname=$dbname",
