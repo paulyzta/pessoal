@@ -1,12 +1,3 @@
-SELECT grupo, COUNT(name) as total FROM `listaIPTV` WHERE category = 'Filme' GROUP BY grupo
-
-
-
-
-
-CREATE TABLE novaTabela SELECT * FROM tabelaPai;
-
-
 CREATE TABLE `listaIPTV` (
   `id` int(11) NOT NULL,
   `name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -14,20 +5,34 @@ CREATE TABLE `listaIPTV` (
   `grupo` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `idList` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `link` text COLLATE utf8_unicode_ci,
+  `ano` int(11) NOT NULL,
   `category` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `temporada` int(11) NOT NULL,
+  `episodio` int(11) NOT NULL,
+  `idTMDB` int(11) NOT NULL,
+  `trailler` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `poster` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `originalTitle` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `backdrop` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `sinopse` text COLLATE utf8_unicode_ci NOT NULL,
+  `nota` float NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+ALTER TABLE `listaIPTV` ADD PRIMARY KEY (`id`);
+ALTER TABLE `listaIPTV` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 
 CREATE VIEW vw_Filmes
   AS SELECT
             id,
-            MID(dev_db.listaIPTV.name, 1, INSTR(dev_db.listaIPTV.name, ' (')-1) AS Titulo,
-            SUBSTRING(dev_db.listaIPTV.name, INSTR(dev_db.listaIPTV.name, ' (')+2, 4) AS Ano,
+            name,
+            logo,
+            ano,
             grupo,
             category,
+            link,
             idTMDB,
             trailler,
             poster,
@@ -39,3 +44,27 @@ CREATE VIEW vw_Filmes
             updated
      FROM dev_db.listaIPTV
      WHERE category = 'Filme';
+
+
+CREATE VIEW vw_Series
+  AS SELECT
+            id,
+            name,
+            logo,
+            ano,
+            temporada,
+            episodio,
+            grupo,
+            category,
+            link,
+            idTMDB,
+            trailler,
+            poster,
+            originalTitle,
+            backdrop,
+            sinopse,
+            nota,
+            created,
+            updated
+     FROM dev_db.listaIPTV
+     WHERE category = 'Serie';
