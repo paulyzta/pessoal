@@ -85,7 +85,7 @@ function salvaRegistro ($array, $pdo) {
         return;
         //Existe! Entao vamos atualizar
         //date_default_timezone_set('America/Sao_Paulo');
-        $array['updated'] = date('Y-m-d h:i:s', time());;
+        $array['updated'] = date('Y-m-d h:i:s', time());
         $array['id'] = intval($row['id']);
 
         $update = '`updated` = :updated';
@@ -151,9 +151,6 @@ function categorizar($arr) {
 
 
 $linhas= file($arquivo);
-
-
-
 //echo count($linhas);
 $index = 0;
 

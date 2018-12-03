@@ -26,41 +26,53 @@ function tirarAcentos($str) {
 
 function atualizaRegistro ($array, $pdo) {
     date_default_timezone_set('America/Sao_Paulo');
+    echo date ("Y-m-d h:i:s");
     $array['updated'] = date('Y-m-d h:i:s', time());
 
-    $sql  = "UPDATE listaIPTV SET idTMDB = :idTMDB, trailler = :trailler, poster = :poster, originalTitle = :originalTitle, backdrop = :backdrop, sinopse = :sinopse, nota = :nota, updated = :updated WHERE id = :id";
+    die($array['updated']);
+
+    $update = '`updated` = :updated';
+    foreach ($array AS $k => $v) {
+        $update .= ", `$k` = :$k ";
+    }
+    $sql = "UPDATE listaIPTV SET  ".$update." WHERE id = :id";
     $stmt = $pdo->prepare($sql);
     $resp = $stmt->execute($array);
 
-    if ($resp){
-        //registro salvo
-        return true;
-    } else {
-        //registro nao salvo
-        echo 'Deu ruim aqui...<pre>';
-        print_r($array);
-        die('<hr>');
-    }
+    return ($resp ? true : false);
+//
+//    if ($resp){
+//        //registro salvo
+//        return true;
+//    } else {
+//        //registro nao salvo
+//        echo 'Deu ruim aqui...<pre>';
+//        print_r($array);
+//        die('<hr>');
+//    }
 }
 
 
 function getDetalhes($titulo, $ano) {
-    $titulo = tirarAcentos($titulo);
-    $apiURL = "https://api.themoviedb.org/3/search/movie?api_key=e83b1bc134fdaad358d19fff2edc74f9&language=pt-BR&query=$titulo&year=$ano";
+    $titulo  = tirarAcentos($titulo);
+    $apiURL  = 'https://api.themoviedb.org/3/search/movie?api_key=e83b1bc134fdaad358d19fff2edc74f9&language=pt-BR&query=';
+    $minURL  = $apiURL.$titulo;
+    $fullURL = $minURL."&year=$ano";
 
-    $json = json_decode(file_get_contents($apiURL), true);
+
+    $json = json_decode(file_get_contents($fullURL), true);
 //    var_dump($json);
 //    print_r($json['results'][0]);
 
     if ( empty($json['results'][0]) ) {
-        die($apiURL);
+        $json = json_decode(file_get_contents($minURL), true);
     }
 
 
     return ( !empty($json['results'][0]) ? $json['results'][0] : false );
 }
 
-$sql = 'SELECT * FROM vw_Filmes WHERE idTMDB = 0 LIMIT 100';
+$sql = 'SELECT * FROM vw_Filmes WHERE idTMDB = -1 LIMIT 100';
 //$sql = 'SELECT * FROM vw_Filmes WHERE Titulo LIKE \'%vingadores%\'';
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
@@ -87,10 +99,15 @@ foreach ($filmes as $filme) {
 
         if ( !$update ) {
             $erro['erro TMDB'][] = $filme;
-
         }
         //sleep(5);
     } else {
+        echo 'Deu ruim...';
+        $res = [
+            'id' => $filme['id'],
+            'idTMDB' => '-1',
+        ];
+        atualizaRegistro($res, $pdo);
         $erro[] = $filme;
     }
 
