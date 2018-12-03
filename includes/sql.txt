@@ -68,3 +68,12 @@ CREATE VIEW vw_Series
             updated
      FROM dev_db.listaIPTV
      WHERE category = 'Serie';
+
+
+ CREATE VIEW vw_Generos
+    AS SELECT
+        grupo AS genero,
+        COUNT(id) AS qtdFilmes
+    FROM dev_db.listaIPTV
+    WHERE category = 'Filme'
+    GROUP BY grupo;
