@@ -26,24 +26,27 @@ ALTER TABLE `listaIPTV` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 CREATE VIEW vw_Filmes
   AS SELECT
-            id,
-            name,
-            logo,
-            ano,
-            grupo,
-            category,
-            link,
-            idTMDB,
-            trailler,
-            poster,
-            originalTitle,
-            backdrop,
-            sinopse,
-            nota,
-            created,
-            updated
-     FROM dev_db.listaIPTV
-     WHERE category = 'Filme';
+         l.id,
+         l.name,
+         l.logo,
+         l.ano,
+         l.grupo,
+         g.id AS idGenero,
+         l.category,
+         l.link,
+         l.idTMDB,
+         l.trailler,
+         l.poster,
+         l.originalTitle,
+         l.backdrop,
+         l.sinopse,
+         l.nota,
+         l.created,
+         l.updated
+  FROM dev_db.listaIPTV AS l
+  LEFT JOIN generos AS g
+    ON l.grupo = g.genero
+  WHERE category = 'Filme';
 
 
 CREATE VIEW vw_Series
@@ -72,8 +75,12 @@ CREATE VIEW vw_Series
 
  CREATE VIEW vw_Generos
     AS SELECT
-        grupo AS genero,
-        COUNT(id) AS qtdFilmes
-    FROM dev_db.listaIPTV
-    WHERE category = 'Filme'
-    GROUP BY grupo;
+            g.id AS id,
+           l.grupo AS genero,
+           COUNT(l.id) AS qtdFilmes
+       FROM dev_db.listaIPTV AS l
+       INNER JOIN dev_db.generos AS g
+        ON l.grupo = g.genero
+       WHERE category = 'Filme'
+       GROUP BY grupo
+       ORDER BY grupo ASC;

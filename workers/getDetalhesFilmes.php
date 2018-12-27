@@ -15,21 +15,21 @@ $inicio = microtime(true);
 function tirarAcentos($str) {
     $acentos = array('À', 'Á','Â','Ã','Ä','Å','Ç','È','É','Ê','Ë','Ì',
         'Í','Î','Ï','Ò','Ó','Ô','Õ','Ö','Ù','Ú','Û','Ü','Ý','à','á','â','ã','ä','å','ç','è'
-    ,'é','ê','ë','ì','í','î','ï','ð','ò','ó','ô','õ','ö','ù','ú','û','ü','ý','ÿ', ' ', '[LEGENDADO]');
+    ,'é','ê','ë','ì','í','î','ï','ð','ò','ó','ô','õ','ö','ù','ú','û','ü','ý','ÿ', ' ', '[LEGENDADO]', ': ', ' - ');
 
     $sem_acentos = array('A','A','A','A','A','A','C','E','E','E','E','I','I','I',
         'I','O','O','O','O','O','U','U','U','U','Y','a','a','a','a','a','a','c','e','e','e'
-    ,'e','i','i','i','i','o','o','o','o','o','o','u','u','u','u','y','y', '+', '');
+    ,'e','i','i','i','i','o','o','o','o','o','o','u','u','u','u','y','y', '+', '', '', '+');
 
     return str_replace($acentos, $sem_acentos, $str);
 }
 
 function atualizaRegistro ($array, $pdo) {
-    date_default_timezone_set('America/Sao_Paulo');
-    echo date ("Y-m-d h:i:s");
+    //date_default_timezone_set('America/Sao_Paulo');
+    //echo date ("Y-m-d h:i:s");
     $array['updated'] = date('Y-m-d h:i:s', time());
 
-    die($array['updated']);
+    //die($array['updated']);
 
     $update = '`updated` = :updated';
     foreach ($array AS $k => $v) {
@@ -59,20 +59,17 @@ function getDetalhes($titulo, $ano) {
     $minURL  = $apiURL.$titulo;
     $fullURL = $minURL."&year=$ano";
 
-
     $json = json_decode(file_get_contents($fullURL), true);
-//    var_dump($json);
-//    print_r($json['results'][0]);
 
-    if ( empty($json['results'][0]) ) {
+    if ( $json['total_results'] < 1 ) {
         $json = json_decode(file_get_contents($minURL), true);
     }
-
+    sleep(2);
 
     return ( !empty($json['results'][0]) ? $json['results'][0] : false );
 }
 
-$sql = 'SELECT * FROM vw_Filmes WHERE idTMDB = -1 LIMIT 100';
+$sql = 'SELECT * FROM vw_Filmes WHERE idTMDB = 0 LIMIT 500';
 //$sql = 'SELECT * FROM vw_Filmes WHERE Titulo LIKE \'%vingadores%\'';
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
@@ -81,6 +78,7 @@ $index = 0;
 
 foreach ($filmes as $filme) {
     $tmdb = getDetalhes($filme['name'], $filme['ano']);
+    //print_r($filme);
 
     if ( !empty($tmdb) ) {
         $res = [
@@ -102,7 +100,7 @@ foreach ($filmes as $filme) {
         }
         //sleep(5);
     } else {
-        echo 'Deu ruim...';
+        //echo 'Deu ruim...';
         $res = [
             'id' => $filme['id'],
             'idTMDB' => '-1',
@@ -123,7 +121,8 @@ if ( isset($erro) ) {
 }
 
 
-$tempoTotal = microtime(true) - $inicio;
-echo 'Tempo de execução (segundos): ' . (microtime(true) - $inicio);
+$tempoTotal = number_format((microtime(true) - $inicio) / 60, 2, ',', '.');
+
+echo 'Tempo de execução (segundos): ' . $tempoTotal;
 
 echo '<br>Fim<hr>';

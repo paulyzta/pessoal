@@ -10,14 +10,14 @@
 require ('../includes/conecta.php');
 
 function getCategories($pdo) {
-    $sql = 'SELECT  grupo, count(name) AS total FROM listaIPTV WHERE category = :category GROUP BY grupo ORDER BY grupo ASC';
+    $sql = 'SELECT * FROM vw_Generos';
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(array(':category' => 'filme'));
+    $stmt->execute();
     $generos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     $html = '<ul>';
     foreach ($generos as $value) {
-        $html .= '<li><a href="listaFilme.php?genero='.$value['grupo'].'"> '.$value['grupo'].' ('.$value['total'].')</a></li>';
+        $html .= '<li><a href="listaFilme.php?genero='.$value['id'].'"> '.$value['genero'].' ('.$value['qtdFilmes'].')</a></li>';
     }
     $html .= '</ul>';
 
