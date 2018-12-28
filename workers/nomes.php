@@ -33,11 +33,7 @@ function trata($line) {
         //$result[$k] = mb_strtolower($end !== '' ? $end : '-' );
         $result[$k] = ($end !== '' ? $end : '-' );
     }
-//
-//    $result['grupo']  = $result['group-title'];
-//    $result['idList'] = $result['tvg-id'];
-//    unset($result['group-title'], $result['tvg-id']);
-//    print_r($result);die();
+
 
     $result = categorizar($result);
 
@@ -95,18 +91,15 @@ foreach($linhas as $linha) {
         //remove a primeira linha
         if ( strpos($linha, 'EXTINF') ) {
             //trata a string com os dados do link
-            $naoCanais = array('Desenhos 24H', 'Programas De TV 24H', 'Radios', 'ADULTOS');
+            $naoCanais = array('Desenhos 24Hs', 'Desenhos Classicos 24Hs', 'Programas De TV 24Hs', 'Radios', 'ADULTOS');
             $r = trata($linha);
             //print_r($r);die();
             if ( $r['category'] === 'Canal-TV' && !in_array($r['grupo'], $naoCanais) ) {
                 //Pega so oq é "Canal-TV" e tira os "naoCanais" deixando apenas os canais de TV mesmo
+                //$result[] = $r['name'].' - '.$r['grupo'];
+                $result[] = $r['name'];
 
-
-                $result[] = $r['name'].' - '.$r['grupo'];
-                //$result[] = $r['name'];
-
-
-                $teste = array(
+                $filtro = array(
                     ' - Alternativo',
                     ' - FHD',
                     ' -FHD',
@@ -127,65 +120,78 @@ foreach($linhas as $linha) {
                     ' 24h',
                     );
 
-                if ( !preg_match('/'.implode('|', $teste).'/', $r['name']) ) {
-                    $lixo[] = $r['name'];
+                if ( !preg_match('/'.implode('|', $filtro).'/', $r['name']) ) {
+                    //$filtrados[] = $r['name'];
+                    //$filtrados[] = $r['name'].' - '.$r['grupo'];
+                    $todosCanais[$r['grupo']][] = $r['name'];
+                    //$filtrados[] = $r['name'].' HD';
                 }
 
             }
         }
     }
-
-    //$index++;
-    if ($index >= 20) {
-        echo 'Interrompendo...';
-        break;
-    }
-
 }
+
+//INSERT INTO `nomeCanaisEPG`(`id`, `nomeListaIPTV`, `nomeListaCLARO`, `nomeListaTVMAGAZINE`) VALUES ([value-1],[value-2],[value-3],[value-4])
 
 echo '<pre>';
 //sort($result);
 //print_r($result);
 
 //echo '<hr>';
-sort($lixo);
+//sort($teste);
 
 //print_r($teste);die();
-//print_r($lixo);
+//print_r($todosCanais);die();
 
-
-
-$xml = simplexml_load_file('../includes/clarotv.com.br.channels.xml');
-
-foreach ($xml->channels AS $channel) {
-
-    foreach ($channel AS $c) {
-//        echo $c;
-//        echo str_replace(' [Brazil]', '', $c);
-//        die();
-        $nome = str_replace(' [Brazil]', '', $c);
-        if ( in_array($nome, $lixo) ){
-
-            //<channel update="i" site="meuguia.tv" site_id="canal/BBC" xmltv_id="BBC World News [Brazil]">BBC World News [Brazil]</channel>
-            echo '<channel update="i" site="clarotv.com.br" site_id="'.$c['site_id'].'" xmltv_id="'.$nome.'">'.$nome.'</channel>'."\n";
-
-            foreach ($teste AS $item) {
-                echo '<channel offset="0" same_as="'.$nome.'" xmltv_id="'.$nome.$item.'">'.$nome.$item.'</channel>'."\n";
-            }
-           // die();
-
-            /*
-             * <channel offset="0" same_as="SPORT.TV1" xmltv_id="SPORT TV 1 HD">SPORT TV 1 HD</channel>
-<channel offset="0" same_as="SPORT.TV1" xmltv_id="SPORT TV 1 FHD">SPORT TV 1 FHD</channel>
-<channel offset="0" same_as="SPORT.TV1" xmltv_id="SPORT TV 1 XXX">SPORT TV 1 XXX</channel>
-             * */
-
-//            echo 'sim';
-//            echo $c.'<br>';
-            //echo $c['site_id'];
-            //die();
-        }
-
+foreach ($todosCanais AS $grupo => $canais) {
+    //echo $canais;
+    //echo $grupo;
+    foreach ($canais AS $canal) {
+        //echo $canal;
+        echo "INSERT INTO nomeCanaisEPG (grupo, nomeListaIPTV) VALUE ('$grupo', '$canal');<br>";
 
     }
+
+    //echo "INSERT INTO nomeCanaisEPG (nomeListaIPTV) VALUE ('$i');<br>";
 }
+
+
+die();
+
+
+
+//$xml = simplexml_load_file('../includes/clarotv.com.br.channels.xml');
+$xml = simplexml_load_file('../includes/tvmagazine.com.br.channels.xml');
+
+foreach ($xml->channels AS $channel) {
+    foreach ($channel AS $c) {
+        //echo $c->getName();
+//        echo $c;
+//        echo '<hr>';
+        //print_r($c->getNamespaces());
+//        echo $c->getName();
+//        echo str_replace(' [Brazil]', '', $c);
+//        var_dump($c);
+//        die();
+        $nome = str_replace(' [Brazil]', '', $c);
+        //$nome = str_replace('+', 'Mais', $nome);
+        //echo '|'.$nome.'|<br>';
+
+        if ( in_array(strtolower($nome), array_map('strtolower', $filtrados)) ) {
+
+            //<channel update="i" site="meuguia.tv" site_id="canal/BBC" xmltv_id="BBC World News [Brazil]">BBC World News [Brazil]</channel>
+            //echo '<channel update="i" site="'.$c['site'].'" site_id="'.$c['site_id'].'" xmltv_id="'.$nome.'">'.$nome.'</channel>'."\n";
+
+            foreach ($filtro AS $item) {
+                //echo '<channel offset="0" same_as="'.$nome.'" xmltv_id="'.$nome.$item.'">'.$nome.$item.'</channel>'."\n";
+            }
+
+        } else {
+            $deuRuim[] = $nome;
+        }
+    }
+}
+print_r($filtrados);
+echo '<hr>';
+print_r($deuRuim);
