@@ -37,6 +37,7 @@ function trata($line) {
 //        'nota'          => '',
 //        );
 
+    $result = [];
     $l = explode('",', $line)[0].'"';
     $itens = array(
         'idList' => 'tvg-id',
@@ -49,21 +50,19 @@ function trata($line) {
         $start = substr( $l, ( strpos($l, $v.'=') + (strlen($v) +2) ) );
         $end   = substr( $start, 0,  strpos($start, '"') );
 
-        $result[$k] = mb_strtolower($end !== '' ? $end : '-' );
+        //$result[$k] = mb_strtolower($end !== '' ? $end : '-' );
+        $result[$k] = ($end !== '' ? $end : '-' );
     }
-//
-//    $result['grupo']  = $result['group-title'];
-//    $result['idList'] = $result['tvg-id'];
-//    unset($result['group-title'], $result['tvg-id']);
-//    print_r($result);die();
+    //print_r($result);die();
 
-    $result = categorizar($result);
+    //$result = categorizar($result);
 
-    return $result;
+    return categorizar($result);
 }
 
 
 function trataSiglas($name) {
+    die('morreu isso aqui... apagar');
     $minusculas = array('hd', 'fhd', 'rjhd', 'rjfhd', 'rj', 'sphd', 'spfhd', 'sp', '4k');
     $MAIUSCULAS = array('HD', 'FHD', 'RJHD', 'RJFHD', 'RJ', 'SPHD', 'SPFHD', 'SP', '4K');
 
@@ -81,8 +80,6 @@ function salvaRegistro ($array, $pdo) {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($row) {
-        //echo $log[] = 'UPDATE - '.$array['name'];
-        return;
         //Existe! Entao vamos atualizar
         //date_default_timezone_set('America/Sao_Paulo');
         $array['updated'] = date('Y-m-d h:i:s', time());
@@ -95,15 +92,10 @@ function salvaRegistro ($array, $pdo) {
         //$sql = "UPDATE listaIPTV SET `name` = :name, logo = :logo, grupo = :grupo, idList = :idList, category = :category WHERE link = :link";
         $sql = "UPDATE listaIPTV SET  ".$update." WHERE id = :id";
     } else {
-        //$log[] = 'INSERT INTO - '.$array['name'];
-        //die('aqui'); INSERT INTO listaIPTV (name,logo,grupo,idList,category,link) VALUES (?,?,?,?,?,?)|
         //NAO Existe! Entao vamos cadastrar
         $columnString = implode(',', array_keys($array));
-        //$valueString = implode(',', array_fill(0, count($array), '?'));
         $valueString = implode(', :', array_keys($array));
 
-        //$sql = 'INSERT INTO `listaIPTV`(`name`, `logo`, `grupo`, `idList`, `link`, `ano`, `category`, `temporada`, `episodio`, `idTMDB`, `trailler`, `poster`, `originalTitle`, `backdrop`, `sinopse`, `nota`) VALUES (:name, :logo, :grupo, :idList, :link, :ano, :category, :temporada, :episodio, :idTMDB, :trailler, :poster, :originalTitle, :backdrop, :sinopse, :nota)';
-        //$sql = "INSERT INTO listaIPTV ({$columnString}) VALUES ({$valueString})";
         $sql = "INSERT INTO listaIPTV ({$columnString}) VALUES (:{$valueString})";
     }
         //print_r($array);
@@ -113,7 +105,7 @@ function salvaRegistro ($array, $pdo) {
 
 function categorizar($arr) {
 
-    $regExGrupo = '/^\(.*\)$/'; //Reconhece o ANO de producao do filme para definir que é um filme
+    $regExGrupo = '/^\(.*\)$/'; //Procura por PARENTESES no grupo
     $regExFilmes = '/\s\((\d{4})\)/'; //Reconhece o ANO de producao do filme para definir que é um filme
     $regExSeries = '/([Ss]?)([0-9]{1,2})\s([eE\.\-]?)([0-9]{1,2})/'; //Busca por Sxx Exx para identificar uma serie
 
@@ -122,7 +114,7 @@ function categorizar($arr) {
         preg_match_all($regExFilmes, $arr['name'], $resultado);
 
         $name = str_replace($resultado[0], '', $arr['name']);
-        $name = str_replace('(leg)', '[LEGENDADO]', $name);
+        $name = str_replace('(LEG)', '[LEGENDADO]', $name);
 
         $arr['name']     = $name;
         $arr['ano']      = isset($resultado[1][0]) ? $resultado[1][0] : '5555';
@@ -139,10 +131,10 @@ function categorizar($arr) {
     } else {
         //Canais de TV
         $arr['category'] = 'Canal-TV';
-        $arr['name'] = trataSiglas($arr['name']);
+        //$arr['name'] = trataSiglas($arr['name']);
     }
-    $arr['grupo'] = ucwords($arr['grupo']);
-    $arr['name'] = ucwords($arr['name']);
+//    $arr['grupo'] = ucwords($arr['grupo']);
+//    $arr['name'] = ucwords($arr['name']);
 
     return $arr;
 }
@@ -165,6 +157,7 @@ foreach($linhas as $linha) {
             //adiciona o link ao registro
             $result['link'] = $linha;
             //chama a funcao que vai gravar os dados no banco de dados
+            //echo '<pre>';print_r($result);die();
             salvaRegistro($result, $pdo);
 
             $teste[] =$result;
@@ -182,6 +175,6 @@ echo '<pre>';
 //print_r($log);
 print_r($teste);//die();
 
-echo 'terminou de inserir no DB...';
-$tempoTotal = microtime(true) - $inicio;
-echo 'Tempo de execução do primeiro script: ' . $tempoTotal;
+echo 'terminou de inserir no DB...<br>';
+$tempoTotal = number_format( (microtime(true) - $inicio) , 2, ',', '');
+echo 'Tempo de execução do script: ' . $tempoTotal . ' segundos';
