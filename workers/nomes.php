@@ -118,6 +118,7 @@ foreach($linhas as $linha) {
                     '-H265',
                     ' Aternativo',
                     ' 24h',
+                    ' Alt',
                     );
 
                 if ( !preg_match('/'.implode('|', $filtro).'/', $r['name']) ) {

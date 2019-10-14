@@ -1,4 +1,44 @@
 <?php
+
+echo date("\yY\mm\wW");
+echo '<br>';
+echo date("YmW");
+echo '<br>';
+echo date('l jS \of F Y h:i:s A');
+
+die();
+
+$output = shell_exec('ls -lart');
+echo "<pre>$output</pre>";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+die();
+
 require('includes/conecta.php');
 
 $teste = array(

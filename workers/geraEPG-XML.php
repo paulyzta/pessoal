@@ -1,7 +1,7 @@
 <?php
 
-$arquivoFinal = 'xxx.xml';
-$qtdDias = 4;
+$arquivoFinal = 'meu_guia.xml';
+$qtdDias = 1; //0 é igual a um dia. Ou seja, hoje.
 $qtdTentativas = 4;
 
 
@@ -17,7 +17,7 @@ $dom->appendChild($dom->createElement('settings'))
         ->setAttribute('run', 'false')
             ->parentNode
         ->parentNode
-    ->appendChild($dom->createElement('user-agent', 'random'))
+    ->appendChild($dom->createElement('user-agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0'))
         ->parentNode
     ->appendChild($dom->createElement('logging', 'on'))
         ->parentNode
@@ -131,4 +131,4 @@ $dom->formatOutput = true; // set the formatOutput attribute of domDocument to t
 
 // save XML as string or file
 $test1 = $dom->saveXML();
-$dom->save('WebGrab++.config.xml');
+$dom->save('../includes/WebGrab++.config.xml');

@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <filename>xxx.xml</filename>
+  <mode/>
+  <postprocess grab="true" run="false">mdb</postprocess>
+  <user-agent>random</user-agent>
+  <logging>on</logging>
+  <retry time-out="5">4</retry>
+  <timespan>1</timespan>
+  <update>f</update>
+  <channel update="i" site="clarotv.com.br" site_id="107" xmltv_id="Globo RJ">Globo RJ</channel>
+  <channel offset="0" same_as="Globo RJ" xmltv_id="Globo RJ Alternativo">Globo RJ Alternativo</channel>
+  <channel offset="0" same_as="Globo RJ" xmltv_id="Globo RJ Alternativo HD">Globo RJ Alternativo HD</channel>
+  <channel offset="0" same_as="Globo RJ" xmltv_id="Globo RJ FHD">Globo RJ FHD</channel>
+  <channel offset="0" same_as="Globo RJ" xmltv_id="Globo RJ HD">Globo RJ HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="80" xmltv_id="RecordTV SP">RecordTV SP</channel>
+  <channel offset="0" same_as="RecordTV SP" xmltv_id="RecordTV SP FHD">RecordTV SP FHD</channel>
+  <channel offset="0" same_as="RecordTV SP" xmltv_id="RecordTV SP HD">RecordTV SP HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="80" xmltv_id="RecordTV RJ">RecordTV RJ</channel>
+  <channel offset="0" same_as="RecordTV RJ" xmltv_id="RecordTV RJ FHD">RecordTV RJ FHD</channel>
+  <channel offset="0" same_as="RecordTV RJ" xmltv_id="RecordTV RJ HD">RecordTV RJ HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="86" xmltv_id="Sbt">Sbt</channel>
+  <channel offset="0" same_as="Sbt" xmltv_id="SBT Alternativo">SBT Alternativo</channel>
+  <channel offset="0" same_as="Sbt" xmltv_id="SBT Alternativo FHD">SBT Alternativo FHD</channel>
+  <channel offset="0" same_as="Sbt" xmltv_id="SBT FHD">SBT FHD</channel>
+  <channel offset="0" same_as="Sbt" xmltv_id="SBT HD">SBT HD</channel>
+  <channel offset="0" same_as="Sbt" xmltv_id="SBT HD Alternativo">SBT HD Alternativo</channel>
+  <channel offset="0" same_as="Sbt" xmltv_id="SBT Nordeste FHD">SBT Nordeste FHD</channel>
+  <channel offset="0" same_as="Sbt" xmltv_id="SBT Nordeste HD">SBT Nordeste HD</channel>
+  <channel offset="0" same_as="Sbt" xmltv_id="SBT SP Interior">SBT SP Interior</channel>
+  <channel offset="0" same_as="Sbt" xmltv_id="SBT TV Alterosa FHD">SBT TV Alterosa FHD</channel>
+  <channel offset="0" same_as="Sbt" xmltv_id="SBT TV Aratu Bahia FHD">SBT TV Aratu Bahia FHD</channel>
+  <channel offset="0" same_as="Sbt" xmltv_id="SBT TV Borborema Paraiba FHD">SBT TV Borborema Paraiba FHD</channel>
+  <channel offset="0" same_as="Sbt" xmltv_id="SBT TV Serra Dourada FHD">SBT TV Serra Dourada FHD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="5" xmltv_id="Band">Band</channel>
+  <channel offset="0" same_as="Band" xmltv_id="Band Alternativo">Band Alternativo</channel>
+  <channel offset="0" same_as="Band" xmltv_id="Band Alternativo HD">Band Alternativo HD</channel>
+  <channel offset="0" same_as="Band" xmltv_id="Band FHD">Band FHD</channel>
+  <channel offset="0" same_as="Band" xmltv_id="Band HD">Band HD</channel>
+  <channel offset="0" same_as="Band" xmltv_id="Band Nordeste FHD">Band Nordeste FHD</channel>
+  <channel offset="0" same_as="Band" xmltv_id="Band Nordeste HD">Band Nordeste HD</channel>
+  <channel offset="0" same_as="Band" xmltv_id="Band Parana">Band Parana</channel>
+  <channel offset="0" same_as="Band" xmltv_id="Band TV Goiania FHD">Band TV Goiania FHD</channel>
+  <channel offset="0" same_as="Band" xmltv_id="Band TV Manaira Paraiba FHD">Band TV Manaira Paraiba FHD</channel>
+  <channel offset="0" same_as="Band" xmltv_id="Band TV RS FHD">Band TV RS FHD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="240" xmltv_id="Rede Tv">Rede Tv</channel>
+  <channel offset="0" same_as="Rede Tv" xmltv_id="Rede Tv Alternativo">Rede Tv Alternativo</channel>
+  <channel offset="0" same_as="Rede Tv" xmltv_id="Rede TV Alternativo HD">Rede TV Alternativo HD</channel>
+  <channel offset="0" same_as="Rede Tv" xmltv_id="Rede TV FHD">Rede TV FHD</channel>
+  <channel offset="0" same_as="Rede Tv" xmltv_id="Rede TV HD">Rede TV HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="14" xmltv_id="Canal Brasil">Canal Brasil</channel>
+  <channel offset="0" same_as="Canal Brasil" xmltv_id="Canal Brasil Alternativo">Canal Brasil Alternativo</channel>
+  <channel offset="0" same_as="Canal Brasil" xmltv_id="Canal Brasil Alternativo HD">Canal Brasil Alternativo HD</channel>
+  <channel offset="0" same_as="Canal Brasil" xmltv_id="Canal Brasil FHD">Canal Brasil FHD</channel>
+  <channel offset="0" same_as="Canal Brasil" xmltv_id="Canal Brasil HD">Canal Brasil HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="46" xmltv_id="Futura">Futura</channel>
+  <channel offset="0" same_as="Futura" xmltv_id="Futura FHD">Futura FHD</channel>
+  <channel offset="0" same_as="Futura" xmltv_id="Futura HD">Futura HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="103" xmltv_id="TV Cultura">TV Cultura</channel>
+  <channel offset="0" same_as="TV Cultura" xmltv_id="TV Cultura FHD">TV Cultura FHD</channel>
+  <channel offset="0" same_as="TV Cultura" xmltv_id="TV Cultura HD">TV Cultura HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="101" xmltv_id="TV Brasil">TV Brasil</channel>
+  <channel offset="0" same_as="TV Brasil" xmltv_id="TV Brasil FHD">TV Brasil FHD</channel>
+  <channel offset="0" same_as="TV Brasil" xmltv_id="TV Brasil HD">TV Brasil HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="105" xmltv_id="TV Escola">TV Escola</channel>
+  <channel update="i" site="clarotv.com.br" site_id="104" xmltv_id="TV Câmara">TV Câmara</channel>
+  <channel update="i" site="clarotv.com.br" site_id="108" xmltv_id="TV Justica">TV Justica</channel>
+  <channel update="i" site="clarotv.com.br" site_id="110" xmltv_id="TV Senado">TV Senado</channel>
+  <channel update="i" site="clarotv.com.br" site_id="69" xmltv_id="NBR">NBR</channel>
+  <channel update="i" site="clarotv.com.br" site_id="118" xmltv_id="Terra Viva">Terra Viva</channel>
+  <channel update="i" site="clarotv.com.br" site_id="15" xmltv_id="Canal Rural">Canal Rural</channel>
+  <channel update="i" site="clarotv.com.br" site_id="235" xmltv_id="Rede Brasil">Rede Brasil</channel>
+  <channel update="i" site="clarotv.com.br" site_id="49" xmltv_id="Globo News">Globo News</channel>
+  <channel offset="0" same_as="Globo News" xmltv_id="Globo News - Alternativo HD">Globo News - Alternativo HD</channel>
+  <channel offset="0" same_as="Globo News" xmltv_id="Globo News -Alternativo">Globo News -Alternativo</channel>
+  <channel offset="0" same_as="Globo News" xmltv_id="Globo News -FHD">Globo News -FHD</channel>
+  <channel offset="0" same_as="Globo News" xmltv_id="Globo News Alternativo">Globo News Alternativo</channel>
+  <channel offset="0" same_as="Globo News" xmltv_id="Globo News Alternativo HD">Globo News Alternativo HD</channel>
+  <channel offset="0" same_as="Globo News" xmltv_id="Globo News FHD">Globo News FHD</channel>
+  <channel offset="0" same_as="Globo News" xmltv_id="Globo News HD">Globo News HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="7" xmltv_id="Band News">Band News</channel>
+  <channel offset="0" same_as="Band News" xmltv_id="Band News -FHD">Band News -FHD</channel>
+  <channel offset="0" same_as="Band News" xmltv_id="Band News Alternativo">Band News Alternativo</channel>
+  <channel offset="0" same_as="Band News" xmltv_id="Band News Alternativo HD">Band News Alternativo HD</channel>
+  <channel offset="0" same_as="Band News" xmltv_id="Band News FHD">Band News FHD</channel>
+  <channel offset="0" same_as="Band News" xmltv_id="Band News HD">Band News HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="81" xmltv_id="Record News">Record News</channel>
+  <channel offset="0" same_as="Record News" xmltv_id="Record News -FHD">Record News -FHD</channel>
+  <channel offset="0" same_as="Record News" xmltv_id="Record News Alternativo">Record News Alternativo</channel>
+  <channel offset="0" same_as="Record News" xmltv_id="Record News Alternativo HD">Record News Alternativo HD</channel>
+  <channel offset="0" same_as="Record News" xmltv_id="Record News FHD">Record News FHD</channel>
+  <channel offset="0" same_as="Record News" xmltv_id="Record News HD">Record News HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="93" xmltv_id="SporTV">SporTV</channel>
+  <channel offset="0" same_as="SporTV" xmltv_id="SporTV - Alternativo">SporTV - Alternativo</channel>
+  <channel offset="0" same_as="SporTV" xmltv_id="SporTV Alternativo">SporTV Alternativo</channel>
+  <channel offset="0" same_as="SporTV" xmltv_id="SporTV HD">SporTV HD</channel>
+  <channel offset="0" same_as="SporTV" xmltv_id="SporTV HD ‐ Alternativo">SporTV HD ‐ Alternativo</channel>
+  <channel offset="0" same_as="SporTV" xmltv_id="SporTV HD Alternativo">SporTV HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="94" xmltv_id="SporTv 2">SporTv 2</channel>
+  <channel offset="0" same_as="SporTv 2" xmltv_id="SporTV 2 Alternativo">SporTV 2 Alternativo</channel>
+  <channel offset="0" same_as="SporTv 2" xmltv_id="SporTV 2 HD">SporTV 2 HD</channel>
+  <channel offset="0" same_as="SporTv 2" xmltv_id="SporTV 2 HD Alternativo">SporTV 2 HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="186" xmltv_id="SporTV 3">SporTV 3</channel>
+  <channel offset="0" same_as="SporTV 3" xmltv_id="SporTV 3 Alternativo">SporTV 3 Alternativo</channel>
+  <channel offset="0" same_as="SporTV 3" xmltv_id="SporTV 3 HD">SporTV 3 HD</channel>
+  <channel offset="0" same_as="SporTV 3" xmltv_id="SporTV 3 HD Alternativo">SporTV 3 HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="92" xmltv_id="Fox Sports">Fox Sports</channel>
+  <channel offset="0" same_as="Fox Sports" xmltv_id="Fox Sports Alternativo">Fox Sports Alternativo</channel>
+  <channel offset="0" same_as="Fox Sports" xmltv_id="FOX Sports HD">FOX Sports HD</channel>
+  <channel offset="0" same_as="Fox Sports" xmltv_id="FOX Sports HD Alternativo">FOX Sports HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="248" xmltv_id="Fox Sports 2">Fox Sports 2</channel>
+  <channel offset="0" same_as="Fox Sports 2" xmltv_id="Fox Sports 2 Alternativo">Fox Sports 2 Alternativo</channel>
+  <channel offset="0" same_as="Fox Sports 2" xmltv_id="Fox Sports 2 HD">Fox Sports 2 HD</channel>
+  <channel offset="0" same_as="Fox Sports 2" xmltv_id="Fox Sports 2 HD Alternativo">Fox Sports 2 HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="35" xmltv_id="ESPN Brasil">ESPN Brasil</channel>
+  <channel offset="0" same_as="ESPN Brasil" xmltv_id="Espn Brasil Alternativo">Espn Brasil Alternativo</channel>
+  <channel offset="0" same_as="ESPN Brasil" xmltv_id="ESPN Brasil HD">ESPN Brasil HD</channel>
+  <channel offset="0" same_as="ESPN Brasil" xmltv_id="ESPN Brasil HD Alternativo">ESPN Brasil HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="290" xmltv_id="ESPN">ESPN</channel>
+  <channel offset="0" same_as="ESPN" xmltv_id="ESPN Alternativo">ESPN Alternativo</channel>
+  <channel offset="0" same_as="ESPN" xmltv_id="ESPN HD">ESPN HD</channel>
+  <channel offset="0" same_as="ESPN" xmltv_id="ESPN HD Alternativo">ESPN HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="143" xmltv_id="ESPN 2">ESPN 2</channel>
+  <channel offset="0" same_as="ESPN 2" xmltv_id="ESPN 2 Alternativo">ESPN 2 Alternativo</channel>
+  <channel offset="0" same_as="ESPN 2" xmltv_id="ESPN 2 HD">ESPN 2 HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="23" xmltv_id="Combate">Combate</channel>
+  <channel offset="0" same_as="Combate" xmltv_id="Combate -Alternativo">Combate -Alternativo</channel>
+  <channel offset="0" same_as="Combate" xmltv_id="Combate Alternativo">Combate Alternativo</channel>
+  <channel offset="0" same_as="Combate" xmltv_id="Combate Alternativo -HD">Combate Alternativo -HD</channel>
+  <channel offset="0" same_as="Combate" xmltv_id="Combate HD">Combate HD</channel>
+  <channel offset="0" same_as="Combate" xmltv_id="Combate HD Alternativo">Combate HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="292" xmltv_id="Band Sports">Band Sports</channel>
+  <channel offset="0" same_as="Band Sports" xmltv_id="Band Sports Alternativo">Band Sports Alternativo</channel>
+  <channel offset="0" same_as="Band Sports" xmltv_id="Band Sports HD">Band Sports HD</channel>
+  <channel offset="0" same_as="Band Sports" xmltv_id="Band Sports HD Alternativo">Band Sports HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="75" xmltv_id="Premiere Clubes">Premiere Clubes</channel>
+  <channel offset="0" same_as="Premiere Clubes" xmltv_id="Premiere Clubes  FHD">Premiere Clubes  FHD</channel>
+  <channel offset="0" same_as="Premiere Clubes" xmltv_id="Premiere Clubes -Alternativo">Premiere Clubes -Alternativo</channel>
+  <channel offset="0" same_as="Premiere Clubes" xmltv_id="Premiere Clubes ‐ FHD">Premiere Clubes ‐ FHD</channel>
+  <channel offset="0" same_as="Premiere Clubes" xmltv_id="Premiere Clubes ‐FHD">Premiere Clubes ‐FHD</channel>
+  <channel offset="0" same_as="Premiere Clubes" xmltv_id="Premiere Clubes Alternativo">Premiere Clubes Alternativo</channel>
+  <channel offset="0" same_as="Premiere Clubes" xmltv_id="Premiere Clubes Alternativo HD">Premiere Clubes Alternativo HD</channel>
+  <channel offset="0" same_as="Premiere Clubes" xmltv_id="Premiere Clubes FHD">Premiere Clubes FHD</channel>
+  <channel offset="0" same_as="Premiere Clubes" xmltv_id="Premiere Clubes HD">Premiere Clubes HD</channel>
+  <channel offset="0" same_as="Premiere Clubes" xmltv_id="Premiere Clubes UHD - 4K">Premiere Clubes UHD - 4K</channel>
+  <channel update="i" site="clarotv.com.br" site_id="75" xmltv_id="PFC">PFC</channel>
+  <channel offset="0" same_as="PFC" xmltv_id="PFC Alternativo">PFC Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="97" xmltv_id="Telecine Premium">Telecine Premium</channel>
+  <channel offset="0" same_as="Telecine Premium" xmltv_id="Telecine Premium  - FHD">Telecine Premium  - FHD</channel>
+  <channel offset="0" same_as="Telecine Premium" xmltv_id="Telecine Premium -FHD">Telecine Premium -FHD</channel>
+  <channel offset="0" same_as="Telecine Premium" xmltv_id="Telecine Premium Alternativo">Telecine Premium Alternativo</channel>
+  <channel offset="0" same_as="Telecine Premium" xmltv_id="Telecine Premium Dual Audio">Telecine Premium Dual Audio</channel>
+  <channel offset="0" same_as="Telecine Premium" xmltv_id="Telecine Premium FHD">Telecine Premium FHD</channel>
+  <channel offset="0" same_as="Telecine Premium" xmltv_id="Telecine Premium HD">Telecine Premium HD</channel>
+  <channel offset="0" same_as="Telecine Premium" xmltv_id="Telecine Premium HD Alternativo">Telecine Premium HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="98" xmltv_id="Telecine Pipoca">Telecine Pipoca</channel>
+  <channel offset="0" same_as="Telecine Pipoca" xmltv_id="Telecine Pipoca - FHD">Telecine Pipoca - FHD</channel>
+  <channel offset="0" same_as="Telecine Pipoca" xmltv_id="Telecine Pipoca -FHD">Telecine Pipoca -FHD</channel>
+  <channel offset="0" same_as="Telecine Pipoca" xmltv_id="Telecine Pipoca Alternativo">Telecine Pipoca Alternativo</channel>
+  <channel offset="0" same_as="Telecine Pipoca" xmltv_id="Telecine Pipoca Dual Audio">Telecine Pipoca Dual Audio</channel>
+  <channel offset="0" same_as="Telecine Pipoca" xmltv_id="Telecine Pipoca FHD">Telecine Pipoca FHD</channel>
+  <channel offset="0" same_as="Telecine Pipoca" xmltv_id="Telecine Pipoca HD">Telecine Pipoca HD</channel>
+  <channel offset="0" same_as="Telecine Pipoca" xmltv_id="Telecine Pipoca HD Alternativo">Telecine Pipoca HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="145" xmltv_id="Telecine Action">Telecine Action</channel>
+  <channel offset="0" same_as="Telecine Action" xmltv_id="Telecine Action  - FHD">Telecine Action  - FHD</channel>
+  <channel offset="0" same_as="Telecine Action" xmltv_id="Telecine Action -FHD">Telecine Action -FHD</channel>
+  <channel offset="0" same_as="Telecine Action" xmltv_id="Telecine Action Alternativo">Telecine Action Alternativo</channel>
+  <channel offset="0" same_as="Telecine Action" xmltv_id="Telecine Action Dual Audio">Telecine Action Dual Audio</channel>
+  <channel offset="0" same_as="Telecine Action" xmltv_id="Telecine Action FHD">Telecine Action FHD</channel>
+  <channel offset="0" same_as="Telecine Action" xmltv_id="Telecine Action HD">Telecine Action HD</channel>
+  <channel offset="0" same_as="Telecine Action" xmltv_id="Telecine Action HD Alternativo">Telecine Action HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="208" xmltv_id="Telecine Touch">Telecine Touch</channel>
+  <channel offset="0" same_as="Telecine Touch" xmltv_id="Telecine Touch  - FHD">Telecine Touch  - FHD</channel>
+  <channel offset="0" same_as="Telecine Touch" xmltv_id="Telecine Touch -FHD">Telecine Touch -FHD</channel>
+  <channel offset="0" same_as="Telecine Touch" xmltv_id="Telecine Touch Alternativo">Telecine Touch Alternativo</channel>
+  <channel offset="0" same_as="Telecine Touch" xmltv_id="Telecine Touch Dual Audio">Telecine Touch Dual Audio</channel>
+  <channel offset="0" same_as="Telecine Touch" xmltv_id="Telecine Touch FHD">Telecine Touch FHD</channel>
+  <channel offset="0" same_as="Telecine Touch" xmltv_id="Telecine Touch HD">Telecine Touch HD</channel>
+  <channel offset="0" same_as="Telecine Touch" xmltv_id="Telecine Touch HD Alternativo">Telecine Touch HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="209" xmltv_id="Telecine Fun">Telecine Fun</channel>
+  <channel offset="0" same_as="Telecine Fun" xmltv_id="Telecine Fun  - FHD">Telecine Fun  - FHD</channel>
+  <channel offset="0" same_as="Telecine Fun" xmltv_id="Telecine Fun -FHD">Telecine Fun -FHD</channel>
+  <channel offset="0" same_as="Telecine Fun" xmltv_id="Telecine Fun Alternativo">Telecine Fun Alternativo</channel>
+  <channel offset="0" same_as="Telecine Fun" xmltv_id="Telecine Fun Dual Audio">Telecine Fun Dual Audio</channel>
+  <channel offset="0" same_as="Telecine Fun" xmltv_id="Telecine Fun FHD">Telecine Fun FHD</channel>
+  <channel offset="0" same_as="Telecine Fun" xmltv_id="Telecine Fun HD">Telecine Fun HD</channel>
+  <channel offset="0" same_as="Telecine Fun" xmltv_id="Telecine Fun HD Alternativo">Telecine Fun HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="113" xmltv_id="Telecine Cult">Telecine Cult</channel>
+  <channel offset="0" same_as="Telecine Cult" xmltv_id="Telecine Cult - FHD">Telecine Cult - FHD</channel>
+  <channel offset="0" same_as="Telecine Cult" xmltv_id="Telecine Cult Alternativo">Telecine Cult Alternativo</channel>
+  <channel offset="0" same_as="Telecine Cult" xmltv_id="Telecine Cult Dual Audio">Telecine Cult Dual Audio</channel>
+  <channel offset="0" same_as="Telecine Cult" xmltv_id="Telecine Cult FHD">Telecine Cult FHD</channel>
+  <channel offset="0" same_as="Telecine Cult" xmltv_id="Telecine Cult HD">Telecine Cult HD</channel>
+  <channel offset="0" same_as="Telecine Cult" xmltv_id="Telecine Cult HD Alternativo">Telecine Cult HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="286" xmltv_id="MegaPix">MegaPix</channel>
+  <channel offset="0" same_as="MegaPix" xmltv_id="MegaPix -FHD">MegaPix -FHD</channel>
+  <channel offset="0" same_as="MegaPix" xmltv_id="MegaPix Alternativo">MegaPix Alternativo</channel>
+  <channel offset="0" same_as="MegaPix" xmltv_id="MegaPix FHD">MegaPix FHD</channel>
+  <channel offset="0" same_as="MegaPix" xmltv_id="MegaPix HD">MegaPix HD</channel>
+  <channel offset="0" same_as="MegaPix" xmltv_id="Megapix HD Alternativo">Megapix HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="285" xmltv_id="Universal TV">Universal TV</channel>
+  <channel offset="0" same_as="Universal TV" xmltv_id="Universal TV -FHD">Universal TV -FHD</channel>
+  <channel offset="0" same_as="Universal TV" xmltv_id="Universal TV Alternativo">Universal TV Alternativo</channel>
+  <channel offset="0" same_as="Universal TV" xmltv_id="Universal TV FHD">Universal TV FHD</channel>
+  <channel offset="0" same_as="Universal TV" xmltv_id="Universal TV HD">Universal TV HD</channel>
+  <channel offset="0" same_as="Universal TV" xmltv_id="Universal TV HD Alternativo">Universal TV HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="95" xmltv_id="Studio Universal">Studio Universal</channel>
+  <channel offset="0" same_as="Studio Universal" xmltv_id="Studio Universal -FHD">Studio Universal -FHD</channel>
+  <channel offset="0" same_as="Studio Universal" xmltv_id="Studio Universal Alternativo">Studio Universal Alternativo</channel>
+  <channel offset="0" same_as="Studio Universal" xmltv_id="Studio Universal FHD">Studio Universal FHD</channel>
+  <channel offset="0" same_as="Studio Universal" xmltv_id="Studio Universal HD">Studio Universal HD</channel>
+  <channel offset="0" same_as="Studio Universal" xmltv_id="Studio Universal HD Alternativo">Studio Universal HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="88" xmltv_id="Syfy">Syfy</channel>
+  <channel offset="0" same_as="Syfy" xmltv_id="SyFy -FHD">SyFy -FHD</channel>
+  <channel offset="0" same_as="Syfy" xmltv_id="SyFy Alternativo">SyFy Alternativo</channel>
+  <channel offset="0" same_as="Syfy" xmltv_id="Syfy FHD">Syfy FHD</channel>
+  <channel offset="0" same_as="Syfy" xmltv_id="SyFy HD">SyFy HD</channel>
+  <channel offset="0" same_as="Syfy" xmltv_id="SyFy HD Alternativo">SyFy HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="56" xmltv_id="HBO">HBO</channel>
+  <channel offset="0" same_as="HBO" xmltv_id="HBO -FHD">HBO -FHD</channel>
+  <channel offset="0" same_as="HBO" xmltv_id="HBO Alternativo">HBO Alternativo</channel>
+  <channel offset="0" same_as="HBO" xmltv_id="HBO Alternativo HD">HBO Alternativo HD</channel>
+  <channel offset="0" same_as="HBO" xmltv_id="HBO FHD">HBO FHD</channel>
+  <channel offset="0" same_as="HBO" xmltv_id="HBO HD">HBO HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="50" xmltv_id="HBO 2">HBO 2</channel>
+  <channel offset="0" same_as="HBO 2" xmltv_id="HBO 2 -FHD">HBO 2 -FHD</channel>
+  <channel offset="0" same_as="HBO 2" xmltv_id="HBO 2 Alternativo">HBO 2 Alternativo</channel>
+  <channel offset="0" same_as="HBO 2" xmltv_id="HBO 2 Alternativo HD">HBO 2 Alternativo HD</channel>
+  <channel offset="0" same_as="HBO 2" xmltv_id="HBO 2 FHD">HBO 2 FHD</channel>
+  <channel offset="0" same_as="HBO 2" xmltv_id="HBO 2 HD">HBO 2 HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="51" xmltv_id="HBO Signature">HBO Signature</channel>
+  <channel offset="0" same_as="HBO Signature" xmltv_id="HBO Signature -FHD">HBO Signature -FHD</channel>
+  <channel offset="0" same_as="HBO Signature" xmltv_id="HBO Signature Alternativo">HBO Signature Alternativo</channel>
+  <channel offset="0" same_as="HBO Signature" xmltv_id="HBO Signature Alternativo HD">HBO Signature Alternativo HD</channel>
+  <channel offset="0" same_as="HBO Signature" xmltv_id="HBO Signature FHD">HBO Signature FHD</channel>
+  <channel offset="0" same_as="HBO Signature" xmltv_id="HBO Signature HD">HBO Signature HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="52" xmltv_id="HBO Family">HBO Family</channel>
+  <channel offset="0" same_as="HBO Family" xmltv_id="HBO Family -FHD">HBO Family -FHD</channel>
+  <channel offset="0" same_as="HBO Family" xmltv_id="HBO Family Alternativo">HBO Family Alternativo</channel>
+  <channel offset="0" same_as="HBO Family" xmltv_id="HBO Family Alternativo HD">HBO Family Alternativo HD</channel>
+  <channel offset="0" same_as="HBO Family" xmltv_id="HBO Family FHD">HBO Family FHD</channel>
+  <channel offset="0" same_as="HBO Family" xmltv_id="HBO Family HD">HBO Family HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="55" xmltv_id="HBO Plus">HBO Plus</channel>
+  <channel offset="0" same_as="HBO Plus" xmltv_id="HBO Plus -FHD">HBO Plus -FHD</channel>
+  <channel offset="0" same_as="HBO Plus" xmltv_id="HBO Plus Alternativo">HBO Plus Alternativo</channel>
+  <channel offset="0" same_as="HBO Plus" xmltv_id="HBO Plus Alternativo HD">HBO Plus Alternativo HD</channel>
+  <channel offset="0" same_as="HBO Plus" xmltv_id="HBO Plus FHD">HBO Plus FHD</channel>
+  <channel offset="0" same_as="HBO Plus" xmltv_id="HBO Plus HD">HBO Plus HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="54" xmltv_id="HBO Plus e">HBO Plus e</channel>
+  <channel offset="0" same_as="HBO Plus e" xmltv_id="HBO Plus e Alternativo">HBO Plus e Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="65" xmltv_id="Max Prime">Max Prime</channel>
+  <channel offset="0" same_as="Max Prime" xmltv_id="MAX Prime -FHD">MAX Prime -FHD</channel>
+  <channel offset="0" same_as="Max Prime" xmltv_id="Max Prime Alternativo">Max Prime Alternativo</channel>
+  <channel offset="0" same_as="Max Prime" xmltv_id="Max Prime Alternativo HD">Max Prime Alternativo HD</channel>
+  <channel offset="0" same_as="Max Prime" xmltv_id="Max Prime FHD">Max Prime FHD</channel>
+  <channel offset="0" same_as="Max Prime" xmltv_id="Max Prime HD">Max Prime HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="66" xmltv_id="MAX Prime e">MAX Prime e</channel>
+  <channel update="i" site="clarotv.com.br" site_id="21" xmltv_id="Max">Max</channel>
+  <channel offset="0" same_as="Max" xmltv_id="MAX -FHD">MAX -FHD</channel>
+  <channel offset="0" same_as="Max" xmltv_id="MAX Alternativo">MAX Alternativo</channel>
+  <channel offset="0" same_as="Max" xmltv_id="MAX Alternativo HD">MAX Alternativo HD</channel>
+  <channel offset="0" same_as="Max" xmltv_id="Max FHD">Max FHD</channel>
+  <channel offset="0" same_as="Max" xmltv_id="MAX HD">MAX HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="124" xmltv_id="Warner Channel">Warner Channel</channel>
+  <channel offset="0" same_as="Warner Channel" xmltv_id="Warner Channel -FHD">Warner Channel -FHD</channel>
+  <channel offset="0" same_as="Warner Channel" xmltv_id="Warner Channel Alternativo">Warner Channel Alternativo</channel>
+  <channel offset="0" same_as="Warner Channel" xmltv_id="Warner Channel Alternativo HD">Warner Channel Alternativo HD</channel>
+  <channel offset="0" same_as="Warner Channel" xmltv_id="Warner Channel FHD">Warner Channel FHD</channel>
+  <channel offset="0" same_as="Warner Channel" xmltv_id="Warner Channel HD">Warner Channel HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="19" xmltv_id="Cinemax">Cinemax</channel>
+  <channel offset="0" same_as="Cinemax" xmltv_id="Cinemax -FHD">Cinemax -FHD</channel>
+  <channel offset="0" same_as="Cinemax" xmltv_id="Cinemax Alternativo">Cinemax Alternativo</channel>
+  <channel offset="0" same_as="Cinemax" xmltv_id="Cinemax Alternativo HD">Cinemax Alternativo HD</channel>
+  <channel offset="0" same_as="Cinemax" xmltv_id="Cinemax FHD">Cinemax FHD</channel>
+  <channel offset="0" same_as="Cinemax" xmltv_id="Cinemax HD">Cinemax HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="91" xmltv_id="Space">Space</channel>
+  <channel offset="0" same_as="Space" xmltv_id="Space -FHD">Space -FHD</channel>
+  <channel offset="0" same_as="Space" xmltv_id="Space Alternativo">Space Alternativo</channel>
+  <channel offset="0" same_as="Space" xmltv_id="Space Alternativo HD">Space Alternativo HD</channel>
+  <channel offset="0" same_as="Space" xmltv_id="Space FHD">Space FHD</channel>
+  <channel offset="0" same_as="Space" xmltv_id="Space HD">Space HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="123" xmltv_id="Paramount">Paramount</channel>
+  <channel offset="0" same_as="Paramount" xmltv_id="Paramount -FHD">Paramount -FHD</channel>
+  <channel offset="0" same_as="Paramount" xmltv_id="Paramount Alternativo">Paramount Alternativo</channel>
+  <channel offset="0" same_as="Paramount" xmltv_id="Paramount Alternativo HD">Paramount Alternativo HD</channel>
+  <channel offset="0" same_as="Paramount" xmltv_id="Paramount FHD">Paramount FHD</channel>
+  <channel offset="0" same_as="Paramount" xmltv_id="Paramount HD">Paramount HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="100" xmltv_id="TNT">TNT</channel>
+  <channel offset="0" same_as="TNT" xmltv_id="TNT -FHD">TNT -FHD</channel>
+  <channel offset="0" same_as="TNT" xmltv_id="TNT Alternativo">TNT Alternativo</channel>
+  <channel offset="0" same_as="TNT" xmltv_id="TNT Alternativo HD">TNT Alternativo HD</channel>
+  <channel offset="0" same_as="TNT" xmltv_id="TNT FHD">TNT FHD</channel>
+  <channel offset="0" same_as="TNT" xmltv_id="TNT HD">TNT HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="2" xmltv_id="AXN">AXN</channel>
+  <channel offset="0" same_as="AXN" xmltv_id="AXN -FHD">AXN -FHD</channel>
+  <channel offset="0" same_as="AXN" xmltv_id="AXN Alternativo">AXN Alternativo</channel>
+  <channel offset="0" same_as="AXN" xmltv_id="AXN Alternativo HD">AXN Alternativo HD</channel>
+  <channel offset="0" same_as="AXN" xmltv_id="AXN FHD">AXN FHD</channel>
+  <channel offset="0" same_as="AXN" xmltv_id="AXN HD">AXN HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="40" xmltv_id="Fox">Fox</channel>
+  <channel offset="0" same_as="Fox" xmltv_id="FOX -FHD">FOX -FHD</channel>
+  <channel offset="0" same_as="Fox" xmltv_id="FOX Alternativo">FOX Alternativo</channel>
+  <channel offset="0" same_as="Fox" xmltv_id="FOX FHD">FOX FHD</channel>
+  <channel offset="0" same_as="Fox" xmltv_id="FOX HD">FOX HD</channel>
+  <channel offset="0" same_as="Fox" xmltv_id="FOX HD Alternativo">FOX HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="249" xmltv_id="Fox Life">Fox Life</channel>
+  <channel offset="0" same_as="Fox Life" xmltv_id="FOX Life -FHD">FOX Life -FHD</channel>
+  <channel offset="0" same_as="Fox Life" xmltv_id="FOX Life Alternativo">FOX Life Alternativo</channel>
+  <channel offset="0" same_as="Fox Life" xmltv_id="Fox Life FHD">Fox Life FHD</channel>
+  <channel offset="0" same_as="Fox Life" xmltv_id="FOX Life HD">FOX Life HD</channel>
+  <channel offset="0" same_as="Fox Life" xmltv_id="FOX Life HD Alternativo">FOX Life HD Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="42" xmltv_id="FX">FX</channel>
+  <channel offset="0" same_as="FX" xmltv_id="FX -FHD">FX -FHD</channel>
+  <channel offset="0" same_as="FX" xmltv_id="FX Alternativo">FX Alternativo</channel>
+  <channel offset="0" same_as="FX" xmltv_id="FX Alternativo HD">FX Alternativo HD</channel>
+  <channel offset="0" same_as="FX" xmltv_id="FX FHD">FX FHD</channel>
+  <channel offset="0" same_as="FX" xmltv_id="FX HD">FX HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="90" xmltv_id="Sony">Sony</channel>
+  <channel offset="0" same_as="Sony" xmltv_id="Sony -FHD">Sony -FHD</channel>
+  <channel offset="0" same_as="Sony" xmltv_id="Sony Alternativo">Sony Alternativo</channel>
+  <channel offset="0" same_as="Sony" xmltv_id="Sony Alternativo HD">Sony Alternativo HD</channel>
+  <channel offset="0" same_as="Sony" xmltv_id="Sony FHD">Sony FHD</channel>
+  <channel offset="0" same_as="Sony" xmltv_id="Sony HD">Sony HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="224" xmltv_id="TBS">TBS</channel>
+  <channel offset="0" same_as="TBS" xmltv_id="TBS -FHD">TBS -FHD</channel>
+  <channel offset="0" same_as="TBS" xmltv_id="TBS Alternativo">TBS Alternativo</channel>
+  <channel offset="0" same_as="TBS" xmltv_id="TBS Alternativo HD">TBS Alternativo HD</channel>
+  <channel offset="0" same_as="TBS" xmltv_id="TBS FHD">TBS FHD</channel>
+  <channel offset="0" same_as="TBS" xmltv_id="TBS HD">TBS HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="96" xmltv_id="TCM">TCM</channel>
+  <channel offset="0" same_as="TCM" xmltv_id="TCM Alternativo">TCM Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="3" xmltv_id="Animal Planet">Animal Planet</channel>
+  <channel offset="0" same_as="Animal Planet" xmltv_id="Animal Planet -FHD">Animal Planet -FHD</channel>
+  <channel offset="0" same_as="Animal Planet" xmltv_id="Animal Planet Alternativo">Animal Planet Alternativo</channel>
+  <channel offset="0" same_as="Animal Planet" xmltv_id="Animal Planet Alternativo HD">Animal Planet Alternativo HD</channel>
+  <channel offset="0" same_as="Animal Planet" xmltv_id="Animal Planet FHD">Animal Planet FHD</channel>
+  <channel offset="0" same_as="Animal Planet" xmltv_id="Animal Planet HD">Animal Planet HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="28" xmltv_id="Discovery Channel">Discovery Channel</channel>
+  <channel offset="0" same_as="Discovery Channel" xmltv_id="Discovery Channel -FHD">Discovery Channel -FHD</channel>
+  <channel offset="0" same_as="Discovery Channel" xmltv_id="Discovery Channel Alternativo">Discovery Channel Alternativo</channel>
+  <channel offset="0" same_as="Discovery Channel" xmltv_id="Discovery Channel Alternativo HD">Discovery Channel Alternativo HD</channel>
+  <channel offset="0" same_as="Discovery Channel" xmltv_id="Discovery Channel FHD">Discovery Channel FHD</channel>
+  <channel offset="0" same_as="Discovery Channel" xmltv_id="Discovery Channel HD">Discovery Channel HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="147" xmltv_id="Discovery Turbo">Discovery Turbo</channel>
+  <channel offset="0" same_as="Discovery Turbo" xmltv_id="Discovery Turbo  FHD">Discovery Turbo  FHD</channel>
+  <channel offset="0" same_as="Discovery Turbo" xmltv_id="Discovery Turbo -FHD">Discovery Turbo -FHD</channel>
+  <channel offset="0" same_as="Discovery Turbo" xmltv_id="Discovery Turbo Alternativo">Discovery Turbo Alternativo</channel>
+  <channel offset="0" same_as="Discovery Turbo" xmltv_id="Discovery Turbo Alternativo HD">Discovery Turbo Alternativo HD</channel>
+  <channel offset="0" same_as="Discovery Turbo" xmltv_id="Discovery Turbo HD">Discovery Turbo HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="29" xmltv_id="Discovery H&amp;amp;H">Discovery H&amp;H</channel>
+  <channel offset="0" same_as="Discovery H&amp;amp;H" xmltv_id="Discovery H&amp;amp;H -FHD">Discovery H&amp;H -FHD</channel>
+  <channel offset="0" same_as="Discovery H&amp;amp;H" xmltv_id="Discovery H&amp;amp;H Alternativo">Discovery H&amp;H Alternativo</channel>
+  <channel offset="0" same_as="Discovery H&amp;amp;H" xmltv_id="Discovery H&amp;amp;H Alternativo HD">Discovery H&amp;H Alternativo HD</channel>
+  <channel offset="0" same_as="Discovery H&amp;amp;H" xmltv_id="Discovery H&amp;amp;H FHD">Discovery H&amp;H FHD</channel>
+  <channel offset="0" same_as="Discovery H&amp;amp;H" xmltv_id="Discovery H&amp;amp;H HD">Discovery H&amp;H HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="119" xmltv_id="History Channel">History Channel</channel>
+  <channel update="i" site="clarotv.com.br" site_id="10" xmltv_id="H2">H2</channel>
+  <channel offset="0" same_as="H2" xmltv_id="H2 -FHD">H2 -FHD</channel>
+  <channel offset="0" same_as="H2" xmltv_id="H2 Alternativo">H2 Alternativo</channel>
+  <channel offset="0" same_as="H2" xmltv_id="H2 Alternativo HD">H2 Alternativo HD</channel>
+  <channel offset="0" same_as="H2" xmltv_id="H2 FHD">H2 FHD</channel>
+  <channel offset="0" same_as="H2" xmltv_id="H2 HD">H2 HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="71" xmltv_id="National Geographic">National Geographic</channel>
+  <channel update="i" site="clarotv.com.br" site_id="167" xmltv_id="Nat Geo Wild">Nat Geo Wild</channel>
+  <channel offset="0" same_as="Nat Geo Wild" xmltv_id="Nat Geo Wild Alternativo">Nat Geo Wild Alternativo</channel>
+  <channel offset="0" same_as="Nat Geo Wild" xmltv_id="Nat Geo Wild Alternativo HD">Nat Geo Wild Alternativo HD</channel>
+  <channel offset="0" same_as="Nat Geo Wild" xmltv_id="Nat Geo Wild FHD">Nat Geo Wild FHD</channel>
+  <channel offset="0" same_as="Nat Geo Wild" xmltv_id="Nat Geo Wild HD">Nat Geo Wild HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="61" xmltv_id="ID - Investigation Discovery">ID - Investigation Discovery</channel>
+  <channel offset="0" same_as="ID - Investigation Discovery" xmltv_id="ID - Investigation Discovery Alternativo">ID - Investigation Discovery Alternativo</channel>
+  <channel offset="0" same_as="ID - Investigation Discovery" xmltv_id="ID - Investigation Discovery Alternativo HD">ID - Investigation Discovery Alternativo HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="68" xmltv_id="Multishow">Multishow</channel>
+  <channel offset="0" same_as="Multishow" xmltv_id="Multishow -FHD">Multishow -FHD</channel>
+  <channel offset="0" same_as="Multishow" xmltv_id="Multishow Alternativo">Multishow Alternativo</channel>
+  <channel offset="0" same_as="Multishow" xmltv_id="Multishow Alternativo HD">Multishow Alternativo HD</channel>
+  <channel offset="0" same_as="Multishow" xmltv_id="Multishow FHD">Multishow FHD</channel>
+  <channel offset="0" same_as="Multishow" xmltv_id="Multishow HD">Multishow HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="17" xmltv_id="Viva">Viva</channel>
+  <channel offset="0" same_as="Viva" xmltv_id="Viva -FHD">Viva -FHD</channel>
+  <channel offset="0" same_as="Viva" xmltv_id="Viva Alternativo">Viva Alternativo</channel>
+  <channel offset="0" same_as="Viva" xmltv_id="Viva Alternativo HD">Viva Alternativo HD</channel>
+  <channel offset="0" same_as="Viva" xmltv_id="Viva FHD">Viva FHD</channel>
+  <channel offset="0" same_as="Viva" xmltv_id="Viva HD">Viva HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="48" xmltv_id="GNT">GNT</channel>
+  <channel offset="0" same_as="GNT" xmltv_id="GNT -FHD">GNT -FHD</channel>
+  <channel offset="0" same_as="GNT" xmltv_id="GNT Alternativo">GNT Alternativo</channel>
+  <channel offset="0" same_as="GNT" xmltv_id="GNT Alternativo HD">GNT Alternativo HD</channel>
+  <channel offset="0" same_as="GNT" xmltv_id="GNT FHD">GNT FHD</channel>
+  <channel offset="0" same_as="GNT" xmltv_id="GNT HD">GNT HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="201" xmltv_id="Mais Globosat">Mais Globosat</channel>
+  <channel offset="0" same_as="Mais Globosat" xmltv_id="Mais Globosat Alternativo">Mais Globosat Alternativo</channel>
+  <channel offset="0" same_as="Mais Globosat" xmltv_id="Mais Globosat Alternativo HD">Mais Globosat Alternativo HD</channel>
+  <channel offset="0" same_as="Mais Globosat" xmltv_id="Mais Globosat FHD">Mais Globosat FHD</channel>
+  <channel offset="0" same_as="Mais Globosat" xmltv_id="Mais Globosat HD">Mais Globosat HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="188" xmltv_id="Comedy Central">Comedy Central</channel>
+  <channel offset="0" same_as="Comedy Central" xmltv_id="Comedy Central -FHD">Comedy Central -FHD</channel>
+  <channel offset="0" same_as="Comedy Central" xmltv_id="Comedy Central Alternativo">Comedy Central Alternativo</channel>
+  <channel offset="0" same_as="Comedy Central" xmltv_id="Comedy Central Alternativo HD">Comedy Central Alternativo HD</channel>
+  <channel offset="0" same_as="Comedy Central" xmltv_id="Comedy Central FHD">Comedy Central FHD</channel>
+  <channel offset="0" same_as="Comedy Central" xmltv_id="Comedy Central HD">Comedy Central HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="246" xmltv_id="MTV">MTV</channel>
+  <channel offset="0" same_as="MTV" xmltv_id="MTV -FHD">MTV -FHD</channel>
+  <channel offset="0" same_as="MTV" xmltv_id="MTV Alternativo">MTV Alternativo</channel>
+  <channel offset="0" same_as="MTV" xmltv_id="MTV Alternativo HD">MTV Alternativo HD</channel>
+  <channel offset="0" same_as="MTV" xmltv_id="MTV FHD">MTV FHD</channel>
+  <channel offset="0" same_as="MTV" xmltv_id="MTV HD">MTV HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="202" xmltv_id="BIS">BIS</channel>
+  <channel offset="0" same_as="BIS" xmltv_id="BIS -FHD">BIS -FHD</channel>
+  <channel offset="0" same_as="BIS" xmltv_id="BIS Alternativo">BIS Alternativo</channel>
+  <channel offset="0" same_as="BIS" xmltv_id="BIS Alternativo HD">BIS Alternativo HD</channel>
+  <channel offset="0" same_as="BIS" xmltv_id="BIS FHD">BIS FHD</channel>
+  <channel offset="0" same_as="BIS" xmltv_id="BIS HD">BIS HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="148" xmltv_id="Prime Box Brazil">Prime Box Brazil</channel>
+  <channel offset="0" same_as="Prime Box Brazil" xmltv_id="Prime Box Brazil FHD">Prime Box Brazil FHD</channel>
+  <channel offset="0" same_as="Prime Box Brazil" xmltv_id="Prime Box Brazil HD">Prime Box Brazil HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="222" xmltv_id="Music Box Brazil">Music Box Brazil</channel>
+  <channel offset="0" same_as="Music Box Brazil" xmltv_id="Music Box Brazil FHD">Music Box Brazil FHD</channel>
+  <channel offset="0" same_as="Music Box Brazil" xmltv_id="Music Box Brazil HD">Music Box Brazil HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="120" xmltv_id="TruTv">TruTv</channel>
+  <channel offset="0" same_as="TruTv" xmltv_id="TruTv Alternativo">TruTv Alternativo</channel>
+  <channel offset="0" same_as="TruTv" xmltv_id="TruTv Alternativo HD">TruTv Alternativo HD</channel>
+  <channel offset="0" same_as="TruTv" xmltv_id="TruTV FHD">TruTV FHD</channel>
+  <channel offset="0" same_as="TruTv" xmltv_id="TruTv HD">TruTv HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="1" xmltv_id="A&amp;amp;E BR">A&amp;E BR</channel>
+  <channel update="i" site="clarotv.com.br" site_id="200" xmltv_id="OFF">OFF</channel>
+  <channel offset="0" same_as="OFF" xmltv_id="OFF -FHD">OFF -FHD</channel>
+  <channel offset="0" same_as="OFF" xmltv_id="OFF Alternativo">OFF Alternativo</channel>
+  <channel offset="0" same_as="OFF" xmltv_id="OFF Alternativo HD">OFF Alternativo HD</channel>
+  <channel offset="0" same_as="OFF" xmltv_id="OFF FHD">OFF FHD</channel>
+  <channel offset="0" same_as="OFF" xmltv_id="OFF HD">OFF HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="125" xmltv_id="Woohoo">Woohoo</channel>
+  <channel offset="0" same_as="Woohoo" xmltv_id="Woohoo -FHD">Woohoo -FHD</channel>
+  <channel offset="0" same_as="Woohoo" xmltv_id="Woohoo Alternativo">Woohoo Alternativo</channel>
+  <channel offset="0" same_as="Woohoo" xmltv_id="Woohoo Alternativo HD">Woohoo Alternativo HD</channel>
+  <channel offset="0" same_as="Woohoo" xmltv_id="Woohoo FHD">Woohoo FHD</channel>
+  <channel offset="0" same_as="Woohoo" xmltv_id="Woohoo HD">Woohoo HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="31" xmltv_id="TLC">TLC</channel>
+  <channel offset="0" same_as="TLC" xmltv_id="TLC -FHD">TLC -FHD</channel>
+  <channel offset="0" same_as="TLC" xmltv_id="TLC Alternativo">TLC Alternativo</channel>
+  <channel offset="0" same_as="TLC" xmltv_id="TLC Alternativo HD">TLC Alternativo HD</channel>
+  <channel offset="0" same_as="TLC" xmltv_id="TLC FHD">TLC FHD</channel>
+  <channel offset="0" same_as="TLC" xmltv_id="TLC HD">TLC HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="34" xmltv_id="E! BR">E! BR</channel>
+  <channel update="i" site="clarotv.com.br" site_id="211" xmltv_id="Arte 1">Arte 1</channel>
+  <channel offset="0" same_as="Arte 1" xmltv_id="Arte 1 FHD">Arte 1 FHD</channel>
+  <channel offset="0" same_as="Arte 1" xmltv_id="Arte 1 HD">Arte 1 HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="199" xmltv_id="Play Tv">Play Tv</channel>
+  <channel update="i" site="clarotv.com.br" site_id="150" xmltv_id="NHK">NHK</channel>
+  <channel update="i" site="clarotv.com.br" site_id="234" xmltv_id="Rede Vida">Rede Vida</channel>
+  <channel offset="0" same_as="Rede Vida" xmltv_id="Rede Vida FHD">Rede Vida FHD</channel>
+  <channel offset="0" same_as="Rede Vida" xmltv_id="Rede Vida HD">Rede Vida HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="232" xmltv_id="TV Aparecida">TV Aparecida</channel>
+  <channel offset="0" same_as="TV Aparecida" xmltv_id="TV Aparecida HD">TV Aparecida HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="102" xmltv_id="Canção Nova">Canção Nova</channel>
+  <channel offset="0" same_as="Canção Nova" xmltv_id="Canção Nova HD">Canção Nova HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="233" xmltv_id="RIT">RIT</channel>
+  <channel update="i" site="clarotv.com.br" site_id="230" xmltv_id="RBI TV">RBI TV</channel>
+  <channel update="i" site="clarotv.com.br" site_id="357" xmltv_id="Boa Vontade TV">Boa Vontade TV</channel>
+  <channel update="i" site="clarotv.com.br" site_id="30" xmltv_id="Discovery Kids">Discovery Kids</channel>
+  <channel offset="0" same_as="Discovery Kids" xmltv_id="Discovery Kids -FHD">Discovery Kids -FHD</channel>
+  <channel offset="0" same_as="Discovery Kids" xmltv_id="Discovery Kids Alternativo">Discovery Kids Alternativo</channel>
+  <channel offset="0" same_as="Discovery Kids" xmltv_id="Discovery Kids Alternativo HD">Discovery Kids Alternativo HD</channel>
+  <channel offset="0" same_as="Discovery Kids" xmltv_id="Discovery Kids FHD">Discovery Kids FHD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="33" xmltv_id="Disney Channel">Disney Channel</channel>
+  <channel offset="0" same_as="Disney Channel" xmltv_id="Disney Channel -FHD">Disney Channel -FHD</channel>
+  <channel offset="0" same_as="Disney Channel" xmltv_id="Disney Channel Alternativo">Disney Channel Alternativo</channel>
+  <channel offset="0" same_as="Disney Channel" xmltv_id="Disney Channel Alternativo HD">Disney Channel Alternativo HD</channel>
+  <channel offset="0" same_as="Disney Channel" xmltv_id="Disney Channel FHD">Disney Channel FHD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="18" xmltv_id="Cartoon Network">Cartoon Network</channel>
+  <channel offset="0" same_as="Cartoon Network" xmltv_id="Cartoon Network ‐FHD">Cartoon Network ‐FHD</channel>
+  <channel offset="0" same_as="Cartoon Network" xmltv_id="Cartoon Network Alternativo">Cartoon Network Alternativo</channel>
+  <channel offset="0" same_as="Cartoon Network" xmltv_id="Cartoon Network Alternativo HD">Cartoon Network Alternativo HD</channel>
+  <channel offset="0" same_as="Cartoon Network" xmltv_id="Cartoon Network FHD">Cartoon Network FHD</channel>
+  <channel offset="0" same_as="Cartoon Network" xmltv_id="Cartoon Network HD">Cartoon Network HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="77" xmltv_id="Disney Jr">Disney Jr</channel>
+  <channel offset="0" same_as="Disney Jr" xmltv_id="Disney Jr -FHD">Disney Jr -FHD</channel>
+  <channel offset="0" same_as="Disney Jr" xmltv_id="Disney Jr Alternativo">Disney Jr Alternativo</channel>
+  <channel offset="0" same_as="Disney Jr" xmltv_id="Disney Jr Alternativo HD">Disney Jr Alternativo HD</channel>
+  <channel offset="0" same_as="Disney Jr" xmltv_id="Disney Jr FHD">Disney Jr FHD</channel>
+  <channel offset="0" same_as="Disney Jr" xmltv_id="Disney Jr HD">Disney Jr HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="74" xmltv_id="Nickelodeon">Nickelodeon</channel>
+  <channel offset="0" same_as="Nickelodeon" xmltv_id="Nickelodeon -FHD">Nickelodeon -FHD</channel>
+  <channel offset="0" same_as="Nickelodeon" xmltv_id="Nickelodeon Alternativo">Nickelodeon Alternativo</channel>
+  <channel offset="0" same_as="Nickelodeon" xmltv_id="Nickelodeon Alternativo HD">Nickelodeon Alternativo HD</channel>
+  <channel offset="0" same_as="Nickelodeon" xmltv_id="Nickelodeon FHD">Nickelodeon FHD</channel>
+  <channel offset="0" same_as="Nickelodeon" xmltv_id="Nickelodeon HD">Nickelodeon HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="73" xmltv_id="Nick Jr">Nick Jr</channel>
+  <channel offset="0" same_as="Nick Jr" xmltv_id="Nick Jr -FHD">Nick Jr -FHD</channel>
+  <channel offset="0" same_as="Nick Jr" xmltv_id="Nick Jr Alternativo">Nick Jr Alternativo</channel>
+  <channel offset="0" same_as="Nick Jr" xmltv_id="Nick Jr Alternativo HD">Nick Jr Alternativo HD</channel>
+  <channel offset="0" same_as="Nick Jr" xmltv_id="Nick JR FHD">Nick JR FHD</channel>
+  <channel offset="0" same_as="Nick Jr" xmltv_id="Nick Jr HD">Nick Jr HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="191" xmltv_id="Gloob">Gloob</channel>
+  <channel offset="0" same_as="Gloob" xmltv_id="Gloob Alternativo">Gloob Alternativo</channel>
+  <channel offset="0" same_as="Gloob" xmltv_id="Gloob Alternativo HD">Gloob Alternativo HD</channel>
+  <channel offset="0" same_as="Gloob" xmltv_id="Gloob FHD">Gloob FHD</channel>
+  <channel offset="0" same_as="Gloob" xmltv_id="Gloob HD">Gloob HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="11" xmltv_id="Boomerang">Boomerang</channel>
+  <channel offset="0" same_as="Boomerang" xmltv_id="Boomerang -FHD">Boomerang -FHD</channel>
+  <channel offset="0" same_as="Boomerang" xmltv_id="Boomerang Alternativo">Boomerang Alternativo</channel>
+  <channel offset="0" same_as="Boomerang" xmltv_id="Boomerang Alternativo HD">Boomerang Alternativo HD</channel>
+  <channel offset="0" same_as="Boomerang" xmltv_id="Boomerang FHD">Boomerang FHD</channel>
+  <channel offset="0" same_as="Boomerang" xmltv_id="Boomerang HD">Boomerang HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="109" xmltv_id="TV Rá Tim Bum">TV Rá Tim Bum</channel>
+  <channel offset="0" same_as="TV Rá Tim Bum" xmltv_id="TV Rá Tim Bum FHD">TV Rá Tim Bum FHD</channel>
+  <channel offset="0" same_as="TV Rá Tim Bum" xmltv_id="TV Rá Tim Bum HD">TV Rá Tim Bum HD</channel>
+  <channel update="i" site="clarotv.com.br" site_id="175" xmltv_id="Tooncast">Tooncast</channel>
+  <channel offset="0" same_as="Tooncast" xmltv_id="Tooncast Alternativo">Tooncast Alternativo</channel>
+  <channel update="i" site="clarotv.com.br" site_id="32" xmltv_id="Disney XD">Disney XD</channel>
+</settings>
